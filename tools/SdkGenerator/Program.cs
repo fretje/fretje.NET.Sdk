@@ -4,12 +4,12 @@ var rootFolder = GetRootFolderPath();
 var sdkRootPath = rootFolder / "src" / "sdk";
 
 var sdks = new (string SdkName, string BaseSdkName)[] {
-    ("Meziantou.NET.Sdk", "Microsoft.NET.Sdk"),
-    ("Meziantou.NET.Sdk.BlazorWebAssembly", "Microsoft.NET.Sdk.BlazorWebAssembly"),
-    ("Meziantou.NET.Sdk.Razor", "Microsoft.NET.Sdk.Razor"),
-    ("Meziantou.NET.Sdk.Test", "Microsoft.NET.Sdk"),
-    ("Meziantou.NET.Sdk.Web", "Microsoft.NET.Sdk.Web"),
-    ("Meziantou.NET.Sdk.WindowsDesktop", "Microsoft.NET.Sdk.WindowsDesktop"),
+    ("fretje.NET.Sdk", "Microsoft.NET.Sdk"),
+    ("fretje.NET.Sdk.BlazorWebAssembly", "Microsoft.NET.Sdk.BlazorWebAssembly"),
+    ("fretje.NET.Sdk.Razor", "Microsoft.NET.Sdk.Razor"),
+    ("fretje.NET.Sdk.Test", "Microsoft.NET.Sdk"),
+    ("fretje.NET.Sdk.Web", "Microsoft.NET.Sdk.Web"),
+    ("fretje.NET.Sdk.WindowsDesktop", "Microsoft.NET.Sdk.WindowsDesktop"),
 };
 
 foreach (var (sdkName, baseSdkName) in sdks)
@@ -45,7 +45,7 @@ foreach (var (sdkName, baseSdkName) in sdks)
     File.WriteAllText(propsPath, $$"""
         <Project>
             <PropertyGroup>
-                <MeziantouSdkName>{{sdkName}}</MeziantouSdkName>
+                <FretjeSdkName>{{sdkName}}</FretjeSdkName>
                 <_MustImportMicrosoftNETSdk Condition="'$(UsingMicrosoftNETSdk)' != 'true'">true</_MustImportMicrosoftNETSdk>
 
                 <CustomBeforeDirectoryBuildProps>$(CustomBeforeDirectoryBuildProps);$(MSBuildThisFileDirectory)../common/Common.props</CustomBeforeDirectoryBuildProps>
@@ -71,9 +71,9 @@ foreach (var (sdkName, baseSdkName) in sdks)
           <metadata>
             <id>{{sdkName}}</id>
             <version>1.0.0</version>
-            <authors>Meziantou</authors>
+            <authors>Meziantou,fretje</authors>
             <requireLicenseAcceptance>false</requireLicenseAcceptance>
-            <description>Meziantou SDK for .NET projects</description>
+            <description>fretje SDK for .NET projects</description>
             <readme>README.md</readme>
             <license type="expression">MIT</license>
             <repository type="git" url="$RepositoryUrl$" commit="$RepositoryCommit$" branch="$RepositoryBranch$" />

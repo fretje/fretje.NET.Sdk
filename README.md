@@ -1,12 +1,17 @@
-# Meziantou.NET.Sdk
+# fretje.NET.Sdk
 
-- [![Meziantou.NET.Sdk on NuGet](https://img.shields.io/nuget/v/Meziantou.NET.Sdk.svg)](https://www.nuget.org/packages/Meziantou.NET.Sdk/)
+- [![fretje.NET.Sdk on NuGet](https://img.shields.io/nuget/v/fretje.NET.Sdk.svg)](https://www.nuget.org/packages/fretje.NET.Sdk/)
 
 > [!WARNING]
 > This SDK is not meant to be consumed directly. It encodes my own conventions and preferences, and it
 > can change at any time without notice, including breaking changes in minor or patch versions. Instead,
 > fork the project and adapt it to create your own conventions. You can use this repository as a starting
 > point and a reference for the features a custom MSBuild SDK can provide.
+
+> [!WARNING]
+> This repository is a fork of [Meziantou/Meziantou.NET.Sdk](https://github.com/Meziantou/Meziantou.NET.Sdk)
+> containing my personal conventions. It is not meant to be consumed directly. If you want your own
+> conventions, fork the upstream repository and adapt it.
 
 MSBuild SDK that helps standardize build and quality settings across repositories. It provides:
 - Opinionated defaults and naming conventions for .NET projects
@@ -35,12 +40,12 @@ To use it, create a `global.json` file at the solution root with the following c
     "version": "9.0.304"
   },
   "msbuild-sdks": {
-    "Meziantou.NET.Sdk": "1.0.16",
-    "Meziantou.NET.Sdk.BlazorWebAssembly": "1.0.16",
-    "Meziantou.NET.Sdk.Razor": "1.0.16",
-    "Meziantou.NET.Sdk.Test": "1.0.16",
-    "Meziantou.NET.Sdk.Web": "1.0.16",
-    "Meziantou.NET.Sdk.WindowsDesktop": "1.0.16"
+    "fretje.NET.Sdk": "1.0.16",
+    "fretje.NET.Sdk.BlazorWebAssembly": "1.0.16",
+    "fretje.NET.Sdk.Razor": "1.0.16",
+    "fretje.NET.Sdk.Test": "1.0.16",
+    "fretje.NET.Sdk.Web": "1.0.16",
+    "fretje.NET.Sdk.WindowsDesktop": "1.0.16"
   }
 }
 ````
@@ -48,7 +53,7 @@ To use it, create a `global.json` file at the solution root with the following c
 And reference the SDK in your project file:
 
 ````xml
-<Project Sdk="Meziantou.NET.Sdk">
+<Project Sdk="fretje.NET.Sdk">
 </Project>
 ````
 
@@ -57,7 +62,7 @@ And reference the SDK in your project file:
 You can the SDK by specifying the version inside the `csproj` file:
 
 ````xml
-<Project Sdk="Meziantou.NET.Sdk/1.0.16">
+<Project Sdk="fretje.NET.Sdk/1.0.16">
 </Project>
 ````
 
@@ -65,7 +70,7 @@ You can the SDK by specifying the version inside the `csproj` file:
 
 ````xml
 <Project Sdk="Microsoft.NET.SDK">
-    <Sdk Name="Meziantou.NET.Sdk" Version="1.0.16" />
+    <Sdk Name="fretje.NET.Sdk" Version="1.0.16" />
 </Project>
 ````
 
@@ -74,7 +79,7 @@ You can the SDK by specifying the version inside the `csproj` file:
 You can use the SDK with [file-based apps](https://learn.microsoft.com/en-us/dotnet/core/sdk/file-based-apps?WT.mc_id=DT-MVP-5003978) using the `#:sdk` directive:
 
 ````csharp
-#:sdk Meziantou.NET.Sdk@1.0.16
+#:sdk fretje.NET.Sdk@1.0.16
 Console.WriteLine("Hello from a file-based app!");
 ````
 
@@ -88,7 +93,7 @@ You can also use it as an additional SDK alongside `Microsoft.NET.Sdk`:
 
 ````csharp
 #:sdk Microsoft.NET.Sdk
-#:sdk Meziantou.NET.Sdk@1.0.16
+#:sdk fretje.NET.Sdk@1.0.16
 Console.WriteLine("Hello!");
 ````
 
@@ -148,7 +153,7 @@ A switch explicitly set by the project is left untouched.
 
 ## Shared HttpClient
 
-The SDK can add an internal `Meziantou.NET.Sdk.SharedHttpClient` class to C# projects. It exposes shared `HttpClient` instances that recycle the pooled connections every minute, decompress the responses automatically, and retry the failed requests (network errors, timeouts, `408`, `429` and `5xx` responses) up to 5 times, honoring the `Retry-After` header:
+The SDK can add an internal `fretje.NET.Sdk.SharedHttpClient` class to C# projects. It exposes shared `HttpClient` instances that recycle the pooled connections every minute, decompress the responses automatically, and retry the failed requests (network errors, timeouts, `408`, `429` and `5xx` responses) up to 5 times, honoring the `Retry-After` header:
 
 | Member | Description |
 | --- | --- |
@@ -177,7 +182,7 @@ The handler is a `SocketsHttpHandler`, or an `HttpClientHandler` on the target f
 
 The clients send a `User-Agent` header by default. Its value is generated at build time from the assembly name and the assembly version, such as `MyApp/1.0.0.0`. The characters of the assembly name that are not valid in a product token are replaced with `_`.
 
-The class is `partial`, so you can add your own members by declaring `internal static partial class SharedHttpClient` in the `Meziantou.NET.Sdk` namespace.
+The class is `partial`, so you can add your own members by declaring `internal static partial class SharedHttpClient` in the `fretje.NET.Sdk` namespace.
 
 | Property | Default | Description |
 | --- | --- | --- |
@@ -266,10 +271,10 @@ When running on GitHub Actions, the SDK computes the `Version` property:
 | Property | Default | Description |
 | --- | --- | --- |
 | `SearchReadmeFileAbove` | `false` | When `true`, searches parent directories for a README to pack. |
-| `PackageIcon` | icon.png for Meziantou projects | Default icon when the project name starts with Meziantou and no value is set. |
-| `Authors` | `meziantou` for Meziantou projects | Default authors when the project name starts with Meziantou and no value is set. |
-| `Company` | `meziantou` for Meziantou projects | Default company when the project name starts with Meziantou and no value is set. |
-| `PackageLicenseExpression` | `MIT` for Meziantou projects | Default license expression when the project name starts with Meziantou and no value is set. |
+| `PackageIcon` | icon.png for fretje projects | Default icon when the project name starts with fretje and no value is set. |
+| `Authors` | `fretje` for fretje projects | Default authors when the project name starts with fretje and no value is set. |
+| `Company` | `fretje` for fretje projects | Default company when the project name starts with fretje and no value is set. |
+| `PackageLicenseExpression` | `MIT` for fretje projects | Default license expression when the project name starts with fretje and no value is set. |
 | `PackageReadmeFile` | README.md when found | Default README packing behavior when a README exists. |
 
 ## npm restore
@@ -283,10 +288,10 @@ When running on GitHub Actions, the SDK computes the `Version` property:
 
 ## Testing
 
-A project using `Meziantou.NET.Sdk.Test` needs no `PackageReference` to run tests:
+A project using `fretje.NET.Sdk.Test` needs no `PackageReference` to run tests:
 
 ````xml
-<Project Sdk="Meziantou.NET.Sdk.Test">
+<Project Sdk="fretje.NET.Sdk.Test">
 </Project>
 ````
 
@@ -409,7 +414,7 @@ The class is `partial`, so the project can declare another part of it to add its
 are then usable without any using directive too.
 
 Set `EnableXunitStaticHelpers` to `false` to opt out, which is also required when the project already
-declares a non-partial `Meziantou.NET.Sdk.Test.XUnitStaticHelpers` type, as the compiler reports `CS0260` for
+declares a non-partial `fretje.NET.Sdk.Test.XUnitStaticHelpers` type, as the compiler reports `CS0260` for
 the missing `partial` modifier:
 
 ````xml
@@ -441,7 +446,7 @@ Set `EnableXunitEntryPointDisableWarnings` to `false` to not define it:
 | `EnableXunitFullParallelization` | Auto | Generates a source file with `[assembly: Xunit.v3.Parallelization(Mode = Xunit.Sdk.ParallelMode.All, Algorithm = Xunit.Sdk.ParallelAlgorithm.Conservative)]` so every test runs in parallel, not just test collections. Generated when xUnit.net v3 4.0 or later is resolved, when set to `true` whatever the resolved references are, and never when set to `false`. |
 | `XunitParallelizationMode` | `All` | Sets the `Xunit.Sdk.ParallelMode` value used by the generated attribute: `None`, `Collections` or `All`. Setting it also generates the source file whatever the resolved references are. The file is not generated when `EnableXunitFullParallelization` is `false`. |
 | `XunitParallelizationAlgorithm` | `Conservative` | Sets the `Xunit.Sdk.ParallelAlgorithm` value used by the generated attribute: `Conservative` or `Aggressive`. Setting it also generates the source file whatever the resolved references are. The file is not generated when `EnableXunitFullParallelization` is `false`. |
-| `EnableXunitStaticHelpers` | Auto | Generates the `Meziantou.NET.Sdk.Test.XUnitStaticHelpers` static class exposing `XunitCancellationToken` (`TestContext.Current.CancellationToken`). Generated when an xUnit.net v3 package is referenced, when set to `true` whatever the referenced packages are, and never when set to `false`. The global `using static` directive requires `ImplicitUsings`. |
+| `EnableXunitStaticHelpers` | Auto | Generates the `fretje.NET.Sdk.Test.XUnitStaticHelpers` static class exposing `XunitCancellationToken` (`TestContext.Current.CancellationToken`). Generated when an xUnit.net v3 package is referenced, when set to `true` whatever the referenced packages are, and never when set to `false`. The global `using static` directive requires `ImplicitUsings`. |
 | `EnableXunitEntryPointDisableWarnings` | `true` | Defines the `XUNIT_GENERATED_DISABLE_WARNINGS` compilation constant. Set it to `false` to not define the constant. |
 | `EnableGitHubActionsReport` | `true` | Adds `Microsoft.Testing.Extensions.GitHubActionsReport` and `--report-gh --report-gh-slow-test-notices off --report-gh-step-summary $(GitHubActionsStepSummary)`. The extension is inert unless the build runs on GitHub Actions. Slow-test notices are disabled as they are mostly noise on CI machines with varying performance. |
 | `GitHubActionsStepSummary` | `on-failure` | Sets `--report-gh-step-summary`, which controls when the markdown job summary is written to `GITHUB_STEP_SUMMARY`: `on`, `off` or `on-failure`. The summary is written only for failing runs as it brings little value when everything succeeds. |

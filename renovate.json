@@ -19,7 +19,7 @@
     {
       "customType": "regex",
       "managerFilePatterns": [
-        "/(^|/)tests/Meziantou\\.Sdk\\.Tests/Helpers/DotNetSdkHelpers\\.cs$/"
+        "/(^|/)tests/fretje\\.Sdk\\.Tests/Helpers/DotNetSdkHelpers\\.cs$/"
       ],
       "matchStringsStrategy": "any",
       "matchStrings": [
@@ -39,7 +39,7 @@
         "dotnet-version"
       ],
       "matchFileNames": [
-        "/(^|/)tests/Meziantou\\.Sdk\\.Tests/Helpers/DotNetSdkHelpers\\.cs$/"
+        "/(^|/)tests/fretje\\.Sdk\\.Tests/Helpers/DotNetSdkHelpers\\.cs$/"
       ],
       "matchUpdateTypes": [
         "major"

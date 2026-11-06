@@ -63,7 +63,7 @@ jobs:
           run: |
             try
             {
-                $(Invoke-WebRequest "https://www.nuget.org/api/v2/package/Meziantou.NET.Sdk/").BaseResponse.RequestMessage.RequestUri -match "meziantou\.net\.sdk\.1\.0\.([0-9]+).nupkg"
+                $(Invoke-WebRequest "https://www.nuget.org/api/v2/package/fretje.NET.Sdk/").BaseResponse.RequestMessage.RequestUri -match "fretje\.net\.sdk\.1\.0\.([0-9]+).nupkg"
                 $NewVersion = "1.0.$([int]$Matches.1 + 1)"
             }
             catch
@@ -106,7 +106,7 @@ jobs:
       - run: Get-ChildItem "${{ env.NUGET_DIRECTORY }}/*" -Recurse
       - run: dotnet --info
       - name: Run tests (shard ${{ matrix.shard-index }}/4)
-        run: ./.github/run-sharded-tests.ps1 -ShardIndex ${{ matrix.shard-index }} -TotalShards 4 -Project tests/Meziantou.Sdk.Tests -ResultsDirectory test_results
+        run: ./.github/run-sharded-tests.ps1 -ShardIndex ${{ matrix.shard-index }} -TotalShards 4 -Project tests/fretje.Sdk.Tests -ResultsDirectory test_results
         env:
             NUGET_DIRECTORY: ${{ env.NUGET_DIRECTORY }}
             PACKAGE_VERSION: ${{ needs.compute_version.outputs.package_version }}

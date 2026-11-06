@@ -3,11 +3,11 @@
 
   <PropertyGroup>
     <SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
-    <_IsMeziantouProject>$(MSBuildProjectName.StartsWith('Meziantou', StringComparison.OrdinalIgnoreCase))</_IsMeziantouProject>
+    <_IsFretjeProject>$(MSBuildProjectName.StartsWith('fretje', StringComparison.OrdinalIgnoreCase))</_IsFretjeProject>
   </PropertyGroup>
 
   <PropertyGroup>
-    <IsTestProject Condition="'$(MeziantouSdkName)' == 'Meziantou.NET.Sdk.Test'">true</IsTestProject>
+    <IsTestProject Condition="'$(FretjeSdkName)' == 'fretje.NET.Sdk.Test'">true</IsTestProject>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -111,17 +111,17 @@
 
   <PropertyGroup>
     <!-- Auto-detect file-based apps (FileBasedProgram is set by the .NET SDK for file-based apps) -->
-    <MeziantouSingleFileApp Condition="'$(MeziantouSingleFileApp)' == '' AND '$(FileBasedProgram)' == 'true'">true</MeziantouSingleFileApp>
+    <FretjeSingleFileApp Condition="'$(FretjeSingleFileApp)' == '' AND '$(FileBasedProgram)' == 'true'">true</FretjeSingleFileApp>
   </PropertyGroup>
 
   <ItemGroup>
     <!-- Add all editorconfig files -->
     <EditorConfigFiles Include="$(MSBuildThisFileDirectory)../configuration/*.editorconfig"
-                       Exclude="$(MSBuildThisFileDirectory)../configuration/Meziantou.NET.Sdk.*.editorconfig" />
-    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)../configuration/$(MeziantouSdkName).editorconfig"
-                       Condition="'$(MeziantouSdkName)' != '' AND Exists('$(MSBuildThisFileDirectory)../configuration/$(MeziantouSdkName).editorconfig')" />
-    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)../configuration/Meziantou.NET.Sdk.SingleFileApp.editorconfig"
-                       Condition="'$(MeziantouSingleFileApp)' == 'true'" />
+                       Exclude="$(MSBuildThisFileDirectory)../configuration/fretje.NET.Sdk.*.editorconfig" />
+    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)../configuration/$(FretjeSdkName).editorconfig"
+                       Condition="'$(FretjeSdkName)' != '' AND Exists('$(MSBuildThisFileDirectory)../configuration/$(FretjeSdkName).editorconfig')" />
+    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)../configuration/fretje.NET.Sdk.SingleFileApp.editorconfig"
+                       Condition="'$(FretjeSingleFileApp)' == 'true'" />
   </ItemGroup>
 
 </Project>

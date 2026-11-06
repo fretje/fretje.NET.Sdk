@@ -1,0 +1,132 @@
+using Task = System.Threading.Tasks.Task;
+using static fretje.Sdk.Tests.Helpers.PackageFixture;
+using fretje.Sdk.Tests.Helpers;
+
+namespace fretje.Sdk.Tests;
+
+public sealed class FileBasedApp10_0_Root_Tests(PackageFixture fixture, ITestOutputHelper testOutputHelper)
+    : FileBasedAppTests(fixture, testOutputHelper, NetSdkVersion.Net10_0);
+
+public sealed class FileBasedApp11_0_Root_Tests(PackageFixture fixture, ITestOutputHelper testOutputHelper)
+    : FileBasedAppTests(fixture, testOutputHelper, NetSdkVersion.Net11_0);
+
+/// <summary>
+/// Tests for file-based apps using the <c>#:sdk</c> directive.
+/// </summary>
+public abstract class FileBasedAppTests(PackageFixture fixture, ITestOutputHelper testOutputHelper, NetSdkVersion dotnetSdkVersion)
+{
+    private ProjectBuilder CreateProjectBuilder()
+    {
+        var builder = new ProjectBuilder(fixture, testOutputHelper, SdkName);
+        builder.SetDotnetSdkVersion(dotnetSdkVersion);
+        return builder;
+    }
+
+    private string GetSdkDirectives()
+    {
+        return $"""
+            #:sdk {SdkName}@{fixture.Version}
+            #:property SarifFileName={ProjectBuilder.SarifFileName}
+            """;
+    }
+
+    [Fact]
+    public async Task FileBasedApp_Build()
+    {
+        await using var project = CreateProjectBuilder();
+        project.AddFile("Program.cs", $$"""
+            {{GetSdkDirectives()}}
+            Console.WriteLine("Hello from file-based app");
+            """);
+
+        var data = await project.BuildFileAndGetOutput("Program.cs");
+        Assert.Equal(0, data.ExitCode);
+    }
+
+    [Fact]
+    public async Task FileBasedApp_Run()
+    {
+        await using var project = CreateProjectBuilder();
+        project.AddFile("Program.cs", $$"""
+            {{GetSdkDirectives()}}
+            Console.WriteLine("Hello from file-based app");
+            """);
+
+        var data = await project.RunFileAndGetOutput("Program.cs");
+        Assert.Equal(0, data.ExitCode);
+        Assert.True(data.OutputContains("Hello from file-based app"));
+    }
+
+    [Fact]
+    public async Task FileBasedApp_WithPackageDirective()
+    {
+        await using var project = CreateProjectBuilder();
+        project.AddFile("Program.cs", $$"""
+            {{GetSdkDirectives()}}
+            #:package {{TestPackages.Library}}@{{TestPackages.Version}}
+            Console.WriteLine(fretje.Sdk.TestLibrary.TestClass.GetValue());
+            """);
+
+        var data = await project.RunFileAndGetOutput("Program.cs");
+        Assert.Equal(0, data.ExitCode);
+        Assert.True(data.OutputContains(TestPackages.LibraryAssemblyName));
+    }
+
+    [Fact]
+    public async Task FileBasedApp_DefaultProperties()
+    {
+        await using var project = CreateProjectBuilder();
+        project.AddFile("Program.cs", $$"""
+            {{GetSdkDirectives()}}
+            Console.WriteLine("Hello");
+            """);
+
+        var data = await project.BuildFileAndGetOutput("Program.cs");
+        Assert.Equal(0, data.ExitCode);
+        data.AssertMSBuildPropertyValue("LangVersion", "latest");
+        data.AssertMSBuildPropertyValue("Nullable", "enable");
+        data.AssertMSBuildPropertyValue("ImplicitUsings", "enable");
+        data.AssertMSBuildPropertyValue("EnableNETAnalyzers", "true");
+    }
+
+    [Fact]
+    public async Task FileBasedApp_SingleFileAppEditorConfigIsIncluded()
+    {
+        await using var project = CreateProjectBuilder();
+        project.AddFile("Program.cs", $$"""
+            {{GetSdkDirectives()}}
+            Console.WriteLine("Hello");
+            """);
+
+        var data = await project.BuildFileAndGetOutput("Program.cs");
+        Assert.Equal(0, data.ExitCode);
+        data.AssertMSBuildPropertyValue("FretjeSingleFileApp", "true");
+
+        var files = data.GetBinLogFiles();
+        Assert.Contains(files, f => f.EndsWith("fretje.NET.Sdk.SingleFileApp.editorconfig", StringComparison.Ordinal));
+    }
+
+    // File-based apps set 'PublishAot' to 'true' by default, so they get the Native AOT flavor of xUnit.net v3
+    [Fact]
+    public async Task FileBasedApp_TestSdk_AddsXunitNativeAot()
+    {
+        await using var project = CreateProjectBuilder();
+        project.AddFile("Tests.cs", $$"""
+            #:sdk {{SdkTestName}}@{{fixture.Version}}
+            #:property SarifFileName={{ProjectBuilder.SarifFileName}}
+            public class SampleTests
+            {
+                [Fact]
+                public async Task Test1() => await Task.Delay(1, XunitCancellationToken);
+            }
+            """);
+
+        var data = await project.RunFileAndGetOutput("Tests.cs");
+        Assert.Equal(0, data.ExitCode);
+        Assert.True(data.OutputContains("total: 1"));
+
+        var packageReferences = data.GetMSBuildItems("PackageReference");
+        Assert.Contains("xunit.v3.aot.mtp-v2", packageReferences, StringComparer.OrdinalIgnoreCase);
+        Assert.DoesNotContain("xunit.v3.mtp-v2", packageReferences, StringComparer.OrdinalIgnoreCase);
+    }
+}
