@@ -32,9 +32,13 @@
     <file src="configuration/CodingStyle.editorconfig" target="configuration/CodingStyle.editorconfig" />
     <file src="configuration/Compiler.editorconfig" target="configuration/Compiler.editorconfig" />
     <file src="configuration/NamingConvention.editorconfig" target="configuration/NamingConvention.editorconfig" />
+    <file src="configuration/fretje.NET.Sdk.BlazorWebAssembly.editorconfig" target="configuration/fretje.NET.Sdk.BlazorWebAssembly.editorconfig" />
     <file src="configuration/fretje.NET.Sdk.NetStandard2_0.MultiTarget.editorconfig" target="configuration/fretje.NET.Sdk.NetStandard2_0.MultiTarget.editorconfig" />
+    <file src="configuration/fretje.NET.Sdk.Razor.editorconfig" target="configuration/fretje.NET.Sdk.Razor.editorconfig" />
     <file src="configuration/fretje.NET.Sdk.SingleFileApp.editorconfig" target="configuration/fretje.NET.Sdk.SingleFileApp.editorconfig" />
+    <file src="configuration/fretje.NET.Sdk.Test.editorconfig" target="configuration/fretje.NET.Sdk.Test.editorconfig" />
     <file src="configuration/fretje.NET.Sdk.Web.editorconfig" target="configuration/fretje.NET.Sdk.Web.editorconfig" />
+    <file src="configuration/fretje.NET.Sdk.WindowsDesktop.editorconfig" target="configuration/fretje.NET.Sdk.WindowsDesktop.editorconfig" />
     <file src="configuration/fretje.NET.Sdk.editorconfig" target="configuration/fretje.NET.Sdk.editorconfig" />
     <file src="sources/SharedHttpClient.cs" target="sources/SharedHttpClient.cs" />
     <file src="icon.png" target="icon.png" />

@@ -1,0 +1,9 @@
+# global_level must be higher than the base editorconfig files
+is_global = true
+global_level = 1
+
+roslynator_configure_await = false
+
+# RCS1046: Asynchronous method name should end with 'Async'
+dotnet_diagnostic.RCS1046.severity = silent
+

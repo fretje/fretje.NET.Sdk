@@ -2,6 +2,8 @@
 is_global = true
 global_level = 1
 
+roslynator_configure_await = false
+
 # MA0047: Declare types in namespaces
 dotnet_diagnostic.MA0047.severity = none
 

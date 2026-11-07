@@ -2,6 +2,8 @@
 is_global = true
 global_level = 0
 
+stylecop.naming.allowedNamespaceComponents = fretje
+
 # SA0001: XML comment analysis disabled
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA0001.html
 # Enabled: True, Severity: warning
@@ -640,7 +642,7 @@ dotnet_diagnostic.SA1502.severity = silent
 # SA1503: Braces should not be omitted
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1503.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1503.severity = warning
+dotnet_diagnostic.SA1503.severity = none
 
 # SA1504: All accessors should be single-line or multi-line
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1504.html
@@ -730,17 +732,17 @@ dotnet_diagnostic.SA1520.severity = warning
 # SA1600: Elements should be documented
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1600.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1600.severity = warning
+dotnet_diagnostic.SA1600.severity = suggestion
 
 # SA1601: Partial elements should be documented
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1601.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1601.severity = warning
+dotnet_diagnostic.SA1601.severity = suggestion
 
 # SA1602: Enumeration items should be documented
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1602.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1602.severity = warning
+dotnet_diagnostic.SA1602.severity = suggestion
 
 # SA1603: Documentation should contain valid XML
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1603.html
@@ -750,22 +752,22 @@ dotnet_diagnostic.SA1603.severity = none
 # SA1604: Element documentation should have summary
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1604.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1604.severity = warning
+dotnet_diagnostic.SA1604.severity = suggestion
 
 # SA1605: Partial element documentation should have summary
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1605.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1605.severity = warning
+dotnet_diagnostic.SA1605.severity = suggestion
 
 # SA1606: Element documentation should have summary text
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1606.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1606.severity = warning
+dotnet_diagnostic.SA1606.severity = suggestion
 
 # SA1607: Partial element documentation should have summary text
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1607.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1607.severity = warning
+dotnet_diagnostic.SA1607.severity = suggestion
 
 # SA1608: Element documentation should not have default summary
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1608.html
@@ -785,7 +787,7 @@ dotnet_diagnostic.SA1610.severity = warning
 # SA1611: Element parameters should be documented
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1611.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1611.severity = warning
+dotnet_diagnostic.SA1611.severity = suggestion
 
 # SA1612: Element parameter documentation should match element parameters
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1612.html
@@ -805,7 +807,7 @@ dotnet_diagnostic.SA1614.severity = warning
 # SA1615: Element return value should be documented
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1615.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1615.severity = warning
+dotnet_diagnostic.SA1615.severity = suggestion
 
 # SA1616: Element return value documentation should have text
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1616.html
@@ -820,12 +822,12 @@ dotnet_diagnostic.SA1617.severity = warning
 # SA1618: Generic type parameters should be documented
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1618.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1618.severity = warning
+dotnet_diagnostic.SA1618.severity = suggestion
 
 # SA1619: Generic type parameters should be documented partial class
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1619.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1619.severity = warning
+dotnet_diagnostic.SA1619.severity = suggestion
 
 # SA1620: Generic type parameter documentation should match type parameters
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1620.html
@@ -895,7 +897,7 @@ dotnet_diagnostic.SA1632.severity = none
 # SA1633: File should have header
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1633.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1633.severity = warning
+dotnet_diagnostic.SA1633.severity = silent
 
 # SA1634: File header should show copyright
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1634.html

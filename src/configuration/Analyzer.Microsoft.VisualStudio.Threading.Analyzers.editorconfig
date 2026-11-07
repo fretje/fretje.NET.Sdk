@@ -135,7 +135,7 @@ dotnet_diagnostic.VSTHRD117.severity = warning
 # VSTHRD200: Use "Async" suffix for async methods
 # Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD200.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.VSTHRD200.severity = warning
+dotnet_diagnostic.VSTHRD200.severity = none
 
 # VSTHRD202: Remove unnecessary async state machine
 # Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD202.html

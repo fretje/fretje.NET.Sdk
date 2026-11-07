@@ -2,5 +2,4 @@
 is_global = true
 global_level = 1
 
-# VSTHRD111: Use ConfigureAwait(bool)
-dotnet_diagnostic.VSTHRD111.severity = warning
+roslynator_configure_await = true

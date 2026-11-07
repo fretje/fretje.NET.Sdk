@@ -2,4 +2,6 @@
 is_global = true
 global_level = 1
 
+roslynator_configure_await = false
+
 dotnet_diagnostic.CA1002.severity = none
