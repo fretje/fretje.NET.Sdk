@@ -25,6 +25,7 @@
     <file src="configuration/Analyzer.Microsoft.CodeAnalysis.NetAnalyzers.editorconfig" target="configuration/Analyzer.Microsoft.CodeAnalysis.NetAnalyzers.editorconfig" />
     <file src="configuration/Analyzer.Microsoft.VisualStudio.Threading.Analyzers.editorconfig" target="configuration/Analyzer.Microsoft.VisualStudio.Threading.Analyzers.editorconfig" />
     <file src="configuration/Analyzer.Roslynator.Analyzers.editorconfig" target="configuration/Analyzer.Roslynator.Analyzers.editorconfig" />
+    <file src="configuration/Analyzer.StyleCop.Analyzers.editorconfig" target="configuration/Analyzer.StyleCop.Analyzers.editorconfig" />
     <file src="configuration/Analyzer.xunit.analyzers.editorconfig" target="configuration/Analyzer.xunit.analyzers.editorconfig" />
     <file src="configuration/BannedSymbols.NewtonsoftJson.txt" target="configuration/BannedSymbols.NewtonsoftJson.txt" />
     <file src="configuration/BannedSymbols.txt" target="configuration/BannedSymbols.txt" />
