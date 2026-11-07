@@ -333,26 +333,27 @@ projects keep the reflection-based package. Reference `xunit.v3.mtp-v2` in the p
 whatever the value of `PublishAot` is.
 
 The assertions come from
-[`Meziantou.Framework.Assertions`](https://www.nuget.org/packages/Meziantou.Framework.Assertions)
-instead of xUnit.net. The SDK adds the package and generates the
-`global using Assert = Meziantou.Framework.Assertions.Assert;` alias, so `Assert` refers to it in any test
-— a using alias takes precedence over the namespaces imported in the same scope, so it wins over the
-global `using Xunit;` directive:
+[`Shouldly`](https://www.nuget.org/packages/Shouldly)
+instead of xUnit.net. The SDK adds the package and a `using Shouldly;` (when implicit usings are enabled),
+so the extension methods are available in any test:
 
 ````csharp
 [Fact]
-public void Sample() => Assert.HasCount(2, new[] { 1, 2 });
+public void Sample() => new[] { 1, 2 }.ShouldHaveCount(2);
 ````
 
-Only the meaning of `Assert` changes: the assertions of the test framework stay available under their
-full name, such as `Xunit.Assert`. This happens when the SDK adds the default test framework itself and
-the project targets .NET 10 or later, as the package supports no older framework. Set
-`EnableMeziantouAssertions` to `true` to add it whatever the referenced packages and the target framework
-are, or to `false` to opt out and keep the assertions of the test framework:
+Shouldly uses the subject-first syntax (`value.ShouldBe(42)`) and quotes the expression in failure
+messages (`contestant.Points should be 1337 but was 0`), which makes diagnosing easier than the
+expected-first `Assert.Equal(expected, actual)` of xUnit.net. The assertions of the test framework stay
+available under their full name, such as `Xunit.Assert.Equal`. This happens when the SDK adds the default
+test framework itself and the project targets .NET Standard 2.0 or later. Set `EnableShouldlyAssertions`
+to `true`
+to add it whatever the referenced packages and the target framework are, or to `false` to opt out and
+keep the assertions of the test framework:
 
 ````xml
 <PropertyGroup>
-  <EnableMeziantouAssertions>false</EnableMeziantouAssertions>
+  <EnableShouldlyAssertions>false</EnableShouldlyAssertions>
 </PropertyGroup>
 ````
 
@@ -442,7 +443,7 @@ Set `EnableXunitEntryPointDisableWarnings` to `false` to not define it:
 | Property | Default | Description |
 | --- | --- | --- |
 | `EnableDefaultTestFramework` | `true` | Adds `xunit.v3.mtp-v2` (`xunit.v3.aot.mtp-v2` when `PublishAot` is `true` in a C# project targeting .NET 9 or later) when no test framework is referenced, sets `OutputType` to `Exe` (required by xUnit.net v3) and `UseMicrosoftTestingPlatformRunner` to `true`. |
-| `EnableMeziantouAssertions` | Auto | Adds `Meziantou.Framework.Assertions` and aliases `Assert` to `Meziantou.Framework.Assertions.Assert`. Added when the SDK adds the default test framework and the project targets .NET 10 or later, when set to `true` whatever the referenced packages and the target framework are, and never when set to `false`. |
+| `EnableShouldlyAssertions` | Auto | Adds `Shouldly` and a `using Shouldly;` (when implicit usings are enabled). Added when the SDK adds the default test framework and the project targets .NET Standard 2.0 or later, when set to `true` whatever the referenced packages and the target framework are, and never when set to `false`. |
 | `EnableXunitFullParallelization` | Auto | Generates a source file with `[assembly: Xunit.v3.Parallelization(Mode = Xunit.Sdk.ParallelMode.All, Algorithm = Xunit.Sdk.ParallelAlgorithm.Conservative)]` so every test runs in parallel, not just test collections. Generated when xUnit.net v3 4.0 or later is resolved, when set to `true` whatever the resolved references are, and never when set to `false`. |
 | `XunitParallelizationMode` | `All` | Sets the `Xunit.Sdk.ParallelMode` value used by the generated attribute: `None`, `Collections` or `All`. Setting it also generates the source file whatever the resolved references are. The file is not generated when `EnableXunitFullParallelization` is `false`. |
 | `XunitParallelizationAlgorithm` | `Conservative` | Sets the `Xunit.Sdk.ParallelAlgorithm` value used by the generated attribute: `Conservative` or `Aggressive`. Setting it also generates the source file whatever the resolved references are. The file is not generated when `EnableXunitFullParallelization` is `false`. |

@@ -2318,17 +2318,17 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
     }
 
     [Fact]
-    public async Task MTP_MeziantouAssertions_AssertRefersToMeziantouAssertions()
+        public async Task MTP_ShouldlyAssertions_AssertRefersToShouldly()
     {
         await using var project = CreateProjectBuilder(SdkTestName);
         project.AddCsprojFile(filename: "Sample.Tests.csproj");
 
-        // 'Assert' must be resolved to the Meziantou.Framework.Assertions type without any using directive
+            // 'Shouldly' must be usable without any using directive (the SDK adds the implicit global using)
         project.AddFile("Program.cs", """
             public class Tests
             {
                 [Fact]
-                public void Test1() => Assert.Equal(typeof(Meziantou.Framework.Assertions.Assert), typeof(Assert));
+                    public void Test1() => 5.ShouldBe(5);
             }
             """);
 
@@ -2343,13 +2343,13 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
         var data = await project.TestAndGetOutput();
 
         Assert.Equal(0, data.ExitCode);
-        Assert.Contains("Meziantou.Framework.Assertions", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
-        Assert.Contains("Meziantou.Framework.Assertions.Assert", data.GetMSBuildItems("Using"), StringComparer.Ordinal);
+            Assert.Contains("Shouldly", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
+            Assert.Contains("Shouldly", data.GetMSBuildItems("Using"), StringComparer.Ordinal);
     }
 
-    // Only the meaning of 'Assert' changes: the assertions of the test framework stay available
+    // Shouldly is an extension-method library, so the assertions of the test framework stay available
     [Fact]
-    public async Task MTP_MeziantouAssertions_XunitAssertIsStillAvailable()
+        public async Task MTP_ShouldlyAssertions_XunitAssertIsStillAvailable()
     {
         await using var project = CreateProjectBuilder(SdkTestName);
         project.AddCsprojFile(filename: "Sample.Tests.csproj");
@@ -2376,12 +2376,12 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
     }
 
     [Fact]
-    public async Task MTP_MeziantouAssertions_OptOut()
+        public async Task MTP_ShouldlyAssertions_OptOut()
     {
         await using var project = CreateProjectBuilder(SdkTestName);
         project.AddCsprojFile(
             filename: "Sample.Tests.csproj",
-            properties: [("EnableMeziantouAssertions", "false")]
+                properties: [("EnableShouldlyAssertions", "false")]
             );
 
         // 'Assert' must still be resolved to the xUnit.net type
@@ -2404,13 +2404,13 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
         var data = await project.TestAndGetOutput();
 
         Assert.Equal(0, data.ExitCode);
-        Assert.DoesNotContain("Meziantou.Framework.Assertions", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
-        Assert.DoesNotContain("Meziantou.Framework.Assertions.Assert", data.GetMSBuildItems("Using"), StringComparer.Ordinal);
+            Assert.DoesNotContain("Shouldly", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
+            Assert.DoesNotContain("Shouldly", data.GetMSBuildItems("Using"), StringComparer.Ordinal);
     }
 
-    // The package must not replace the assertions of a test framework referenced by the project itself
+    // Shouldly must not replace the assertions of a test framework referenced by the project itself
     [Fact]
-    public async Task MTP_MeziantouAssertions_NotAddedWhenATestFrameworkIsReferenced()
+        public async Task MTP_ShouldlyAssertions_NotAddedWhenATestFrameworkIsReferenced()
     {
         await using var project = CreateProjectBuilder(SdkTestName);
         project.AddCsprojFile(
@@ -2438,41 +2438,17 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
         var data = await project.TestAndGetOutput();
 
         Assert.Equal(0, data.ExitCode);
-        Assert.DoesNotContain("Meziantou.Framework.Assertions", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
-    }
-
-    // The package only supports .NET 10 and later, so it must not break projects targeting an older framework
-    [Fact]
-    public async Task MTP_MeziantouAssertions_NotAddedForUnsupportedTargetFramework()
-    {
-        await using var project = CreateProjectBuilder(SdkTestName);
-        project.AddCsprojFile(
-            filename: "Sample.Tests.csproj",
-            properties: [("TargetFramework", "net8.0")]
-            );
-
-        project.AddFile("Program.cs", """
-            public class Tests
-            {
-                [Fact]
-                public void Test1() => Assert.Equal(typeof(Xunit.Assert), typeof(Assert));
-            }
-            """);
-
-        var data = await project.BuildAndGetOutput();
-
-        Assert.Equal(0, data.ExitCode);
-        Assert.DoesNotContain("Meziantou.Framework.Assertions", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
+            Assert.DoesNotContain("Shouldly", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
     }
 
     // Setting the property explicitly adds the package even when the project references the test framework itself
     [Fact]
-    public async Task MTP_MeziantouAssertions_ExplicitlyEnabled()
+        public async Task MTP_ShouldlyAssertions_ExplicitlyEnabled()
     {
         await using var project = CreateProjectBuilder(SdkTestName);
         project.AddCsprojFile(
             filename: "Sample.Tests.csproj",
-            properties: [("EnableMeziantouAssertions", "true")],
+                properties: [("EnableShouldlyAssertions", "true")],
             nuGetPackages: [.. XUnit3References]
             );
 
@@ -2480,7 +2456,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
             public class Tests
             {
                 [Fact]
-                public void Test1() => Assert.Equal(typeof(Meziantou.Framework.Assertions.Assert), typeof(Assert));
+                    public void Test1() => 5.ShouldBe(5);
             }
             """);
 
@@ -2495,7 +2471,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
         var data = await project.TestAndGetOutput();
 
         Assert.Equal(0, data.ExitCode);
-        Assert.Contains("Meziantou.Framework.Assertions", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
+            Assert.Contains("Shouldly", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
     }
 
     [Fact]
