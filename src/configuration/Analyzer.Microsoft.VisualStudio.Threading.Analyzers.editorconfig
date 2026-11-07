@@ -1,0 +1,144 @@
+# global_level must be higher than the NET Analyzer files
+is_global = true
+global_level = 0
+
+# VSTHRD001: Avoid legacy thread switching APIs
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD001.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD001.severity = warning
+
+# VSTHRD002: Avoid problematic synchronous waits
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD002.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD002.severity = warning
+
+# VSTHRD003: Avoid awaiting foreign Tasks
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD003.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD003.severity = warning
+
+# VSTHRD004: Await SwitchToMainThreadAsync
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD004.html
+# Enabled: True, Severity: error
+dotnet_diagnostic.VSTHRD004.severity = error
+
+# VSTHRD010: Invoke single-threaded types on Main thread
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD010.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD010.severity = warning
+
+# VSTHRD011: Use AsyncLazy<T>
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD011.html
+# Enabled: True, Severity: error
+dotnet_diagnostic.VSTHRD011.severity = error
+
+# VSTHRD012: Provide JoinableTaskFactory where allowed
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD012.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD012.severity = warning
+
+# VSTHRD013: Apply CompletedTaskAttribute only to immutable members
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD013.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD013.severity = warning
+
+# VSTHRD100: Avoid async void methods
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD100.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD100.severity = warning
+
+# VSTHRD101: Avoid unsupported async delegates
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD101.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD101.severity = warning
+
+# VSTHRD102: Implement internal logic asynchronously
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD102.html
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.VSTHRD102.severity = suggestion
+
+# VSTHRD103: Call async methods when in an async method
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD103.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD103.severity = warning
+
+# VSTHRD104: Offer async methods
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD104.html
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.VSTHRD104.severity = suggestion
+
+# VSTHRD105: Avoid method overloads that assume TaskScheduler.Current
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD105.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD105.severity = warning
+
+# VSTHRD106: Use InvokeAsync to raise async events
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD106.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD106.severity = warning
+
+# VSTHRD107: Await Task within using expression
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD107.html
+# Enabled: True, Severity: error
+dotnet_diagnostic.VSTHRD107.severity = error
+
+# VSTHRD108: Assert thread affinity unconditionally
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD108.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD108.severity = warning
+
+# VSTHRD109: Switch instead of assert in async methods
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD109.html
+# Enabled: True, Severity: error
+dotnet_diagnostic.VSTHRD109.severity = error
+
+# VSTHRD110: Observe result of async calls
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD110.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD110.severity = warning
+
+# VSTHRD111: Use ConfigureAwait(bool)
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD111.html
+# Enabled: True, Severity: silent
+dotnet_diagnostic.VSTHRD111.severity = silent
+
+# VSTHRD112: Implement System.IAsyncDisposable
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD112.html
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.VSTHRD112.severity = suggestion
+
+# VSTHRD113: Check for System.IAsyncDisposable
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD113.html
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.VSTHRD113.severity = suggestion
+
+# VSTHRD114: Avoid returning a null Task
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD114.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD114.severity = warning
+
+# VSTHRD115: Avoid creating JoinableTaskContext with null SynchronizationContext
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD115.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD115.severity = warning
+
+# VSTHRD116: Use ThreadStaticAttribute only with static fields
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD116.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD116.severity = warning
+
+# VSTHRD117: Avoid initialization of ThreadStatic fields in a type initializer
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD117.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD117.severity = warning
+
+# VSTHRD200: Use "Async" suffix for async methods
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD200.html
+# Enabled: True, Severity: warning
+dotnet_diagnostic.VSTHRD200.severity = warning
+
+# VSTHRD202: Remove unnecessary async state machine
+# Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD202.html
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.VSTHRD202.severity = suggestion
+
