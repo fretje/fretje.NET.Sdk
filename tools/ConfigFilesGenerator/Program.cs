@@ -26,6 +26,16 @@ var additionalAnalyzerPackages = new[]
     "Meziantou.Framework.FullPath",
 };
 
+string[] skippedPackages =
+[
+    "Roslynator.CodeFixes", // contains code fixes, not analyzers with configurable severities
+];
+
+string[] skippedAnalyzers =
+[
+    "Roslynator.CSharp.Spelling.CSharpSpellingService+CSharpSpellingAnalyzer", // cannot be instantiated (no parameterless constructor)
+];
+
 var writtenFiles = 0;
 await GenerateEditorConfigForCompilerAnalyzers();
 await GenerateEditorConfigForAnalyzers();
@@ -49,12 +59,16 @@ async Task GenerateEditorConfigForAnalyzers()
     await Parallel.ForEachAsync(packages, async (item, cancellationToken) =>
     {
         var (packageId, packageVersion) = item;
+
+        if (skippedPackages.Contains(packageId, StringComparer.OrdinalIgnoreCase))
+            return;
+
         var configurationFilePath = rootFolder / "src" / "configuration" / ("Analyzer." + packageId + ".editorconfig");
 
         var rules = new HashSet<AnalyzerRule>();
         foreach (var assembly in await GetAnalyzerReferences(packageId, packageVersion))
         {
-            AddAnalyzerRules(rules, assembly);
+            AddAnalyzerRules(rules, assembly, skippedAnalyzers);
         }
 
         Console.WriteLine($"Found {rules.Count} rules for {packageId}");
@@ -71,7 +85,7 @@ async Task GenerateEditorConfigForCompilerAnalyzers()
     var rules = new HashSet<AnalyzerRule>();
     foreach (var assembly in await GetCompilerAnalyzerReferences())
     {
-        AddAnalyzerRules(rules, assembly);
+        AddAnalyzerRules(rules, assembly, skippedAnalyzers);
     }
 
     if (await WriteConfigurationFile(configurationFilePath, rules, CancellationToken.None))
@@ -80,7 +94,7 @@ async Task GenerateEditorConfigForCompilerAnalyzers()
     }
 }
 
-static void AddAnalyzerRules(HashSet<AnalyzerRule> rules, Assembly assembly)
+static void AddAnalyzerRules(HashSet<AnalyzerRule> rules, Assembly assembly, string[] skippedAnalyzers)
 {
     foreach (var type in GetTypes(assembly))
     {
@@ -90,9 +104,15 @@ static void AddAnalyzerRules(HashSet<AnalyzerRule> rules, Assembly assembly)
         if (!typeof(DiagnosticAnalyzer).IsAssignableFrom(type))
             continue;
 
+        if (skippedAnalyzers.Contains(type.FullName, StringComparer.Ordinal))
+            continue;
+
         var analyzer = (DiagnosticAnalyzer)Activator.CreateInstance(type)!;
         foreach (var diagnostic in analyzer.SupportedDiagnostics)
         {
+            if (diagnostic.Id.EndsWith("FadeOut", StringComparison.Ordinal))
+                continue;
+
             rules.Add(new AnalyzerRule(diagnostic.Id, diagnostic.Title.ToString(CultureInfo.InvariantCulture).Trim(), diagnostic.HelpLinkUri, diagnostic.IsEnabledByDefault, diagnostic.DefaultSeverity, diagnostic.IsEnabledByDefault ? diagnostic.DefaultSeverity : null));
         }
     }
@@ -300,10 +320,6 @@ async Task<(string Id, NuGetVersion Version)[]> GetAllReferencedNuGetPackages()
             version = metadata.MaxBy(metadata => metadata.Identity.Version)!.Identity.Version;
         }
 
-if(package.Id is "Meziantou.Analyzer")
-        {
-
-        }
         var packageIdentity = new PackageIdentity(package.Id, version);
         await ListAllPackageDependencies(packageIdentity, [repository], NuGetFramework.AnyFramework, cache, NullLogger.Instance, foundPackages, CancellationToken.None);
     }
@@ -583,7 +599,7 @@ static (AnalyzerConfiguration[] Rules, string[] Unknowns) GetConfiguration(FullP
                 if (line.StartsWith("global_level", StringComparison.Ordinal))
                     continue;
 
-                var match = Regex.Match(line, @"^dotnet_diagnostic\.(?<RuleId>[a-zA-Z0-9_]+).severity\s*=\s*(?<Severity>[a-z]+)");
+                var match = Regex.Match(line, @"^dotnet_diagnostic\.(?<RuleId>[a-zA-Z0-9_.]+).severity\s*=\s*(?<Severity>[a-z]+)");
                 if (match.Success)
                 {
                     DiagnosticSeverity? diagnosticSeverity = null;

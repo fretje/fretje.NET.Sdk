@@ -1,0 +1,993 @@
+# global_level must be higher than the NET Analyzer files
+is_global = true
+global_level = 0
+
+# RCS1001: Add braces (when expression spans over multiple lines)
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1001
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1001.severity = suggestion
+
+# RCS1002: Remove braces
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1002
+# Enabled: False, Severity: silent
+dotnet_diagnostic.RCS1002.severity = none
+
+# RCS1003: Add braces to if-else (when expression spans over multiple lines)
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1003
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1003.severity = suggestion
+
+# RCS1004: Remove braces from if-else
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1004
+# Enabled: False, Severity: silent
+dotnet_diagnostic.RCS1004.severity = none
+
+# RCS1005: Simplify nested using statement
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1005
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1005.severity = silent
+
+# RCS1006: Merge 'else' with nested 'if'
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1006
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1006.severity = silent
+
+# RCS1007: Add braces
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1007
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1007.severity = none
+
+# RCS1013: Use predefined type
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1013
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1013.severity = none
+
+# RCS1014: Use explicitly/implicitly typed array
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1014
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1014.severity = none
+
+# RCS1015: Use nameof operator
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1015
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1015.severity = suggestion
+
+# RCS1016: Use block body or expression body
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1016
+# Enabled: False, Severity: silent
+dotnet_diagnostic.RCS1016.severity = none
+
+# RCS1018: Add/remove accessibility modifiers
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1018
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1018.severity = none
+
+# RCS1019: Order modifiers
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1019
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1019.severity = none
+
+# RCS1020: Simplify Nullable<T> to T?
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1020
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1020.severity = suggestion
+
+# RCS1021: Convert lambda expression body to expression body
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1021
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1021.severity = suggestion
+
+# RCS1031: Remove unnecessary braces in switch section
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1031
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1031.severity = silent
+
+# RCS1032: Remove redundant parentheses
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1032
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1032.severity = suggestion
+
+# RCS1033: Remove redundant boolean literal
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1033
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1033.severity = suggestion
+
+# RCS1034: Remove redundant 'sealed' modifier
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1034
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1034.severity = silent
+
+# RCS1037: Remove trailing white-space
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1037
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1037.severity = suggestion
+
+# RCS1039: Remove argument list from attribute
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1039
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1039.severity = silent
+
+# RCS1042: Remove enum default underlying type
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1042
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1042.severity = silent
+
+# RCS1043: Remove 'partial' modifier from type with a single part
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1043
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1043.severity = silent
+
+# RCS1044: Remove original exception from throw statement
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1044
+# Enabled: True, Severity: warning
+dotnet_diagnostic.RCS1044.severity = warning
+
+# RCS1046: Asynchronous method name should end with 'Async'
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1046
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1046.severity = none
+
+# RCS1047: Non-asynchronous method name should not end with 'Async'
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1047
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1047.severity = suggestion
+
+# RCS1048: Use lambda expression instead of anonymous method
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1048
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1048.severity = suggestion
+
+# RCS1049: Simplify boolean comparison
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1049
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1049.severity = suggestion
+
+# RCS1050: Include/omit parentheses when creating new object
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1050
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1050.severity = none
+
+# RCS1051: Add/remove parentheses from condition in conditional operator
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1051
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1051.severity = none
+
+# RCS1052: Declare each attribute separately
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1052
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1052.severity = none
+
+# RCS1055: Unnecessary semicolon at the end of declaration
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1055
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1055.severity = silent
+
+# RCS1056: Avoid usage of using alias directive
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1056
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1056.severity = none
+
+# RCS1058: Use compound assignment
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1058
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1058.severity = suggestion
+
+# RCS1059: Avoid locking on publicly accessible instance
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1059
+# Enabled: True, Severity: warning
+dotnet_diagnostic.RCS1059.severity = warning
+
+# RCS1060: Declare each type in separate file
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1060
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1060.severity = none
+
+# RCS1061: Merge 'if' with nested 'if'
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1061
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1061.severity = silent
+
+# RCS1068: Simplify logical negation
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1068
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1068.severity = suggestion
+
+# RCS1069: Remove unnecessary case label
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1069
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1069.severity = silent
+
+# RCS1070: Remove redundant default switch section
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1070
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1070.severity = silent
+
+# RCS1071: Remove redundant base constructor call
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1071
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1071.severity = silent
+
+# RCS1073: Convert 'if' to 'return' statement
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1073
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1073.severity = suggestion
+
+# RCS1074: Remove redundant constructor
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1074
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1074.severity = silent
+
+# RCS1075: Avoid empty catch clause that catches System.Exception
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1075
+# Enabled: True, Severity: warning
+dotnet_diagnostic.RCS1075.severity = warning
+
+# RCS1077: Optimize LINQ method call
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1077
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1077.severity = suggestion
+
+# RCS1078: Use "" or 'string.Empty'
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1078
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1078.severity = none
+
+# RCS1079: Throwing of new NotImplementedException
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1079
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1079.severity = none
+
+# RCS1080: Use 'Count/Length' property instead of 'Any' method
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1080
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1080.severity = none
+
+# RCS1081: Split variable declaration
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1081
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1081.severity = none
+
+# RCS1084: Use coalesce expression instead of conditional expression
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1084
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1084.severity = suggestion
+
+# RCS1085: Use auto-implemented property
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1085
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1085.severity = suggestion
+
+# RCS1089: Use --/++ operator instead of assignment
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1089
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1089.severity = suggestion
+
+# RCS1090: Add/remove 'ConfigureAwait(false)' call
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1090
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1090.severity = none
+
+# RCS1093: File contains no code
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1093
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1093.severity = suggestion
+
+# RCS1094: Declare using directive on top level
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1094
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1094.severity = none
+
+# RCS1096: Use 'HasFlag' method or bitwise operator
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1096
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1096.severity = none
+
+# RCS1097: Remove redundant 'ToString' call
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1097
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1097.severity = suggestion
+
+# RCS1098: Constant values should be placed on right side of comparisons
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1098
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1098.severity = suggestion
+
+# RCS1099: Default label should be the last label in a switch section
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1099
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1099.severity = suggestion
+
+# RCS1102: Make class static
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1102
+# Enabled: True, Severity: warning
+dotnet_diagnostic.RCS1102.severity = warning
+
+# RCS1103: Convert 'if' to assignment
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1103
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1103.severity = suggestion
+
+# RCS1104: Simplify conditional expression
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1104
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1104.severity = suggestion
+
+# RCS1105: Unnecessary interpolation
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1105
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1105.severity = suggestion
+
+# RCS1107: Remove redundant 'ToCharArray' call
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1107
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1107.severity = suggestion
+
+# RCS1108: Add 'static' modifier to all partial class declarations
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1108
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1108.severity = suggestion
+
+# RCS1110: Declare type inside namespace
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1110
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1110.severity = suggestion
+
+# RCS1111: Add braces to switch section with multiple statements
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1111
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1111.severity = none
+
+# RCS1112: Combine 'Enumerable.Where' method chain
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1112
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1112.severity = suggestion
+
+# RCS1113: Use 'string.IsNullOrEmpty' method
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1113
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1113.severity = suggestion
+
+# RCS1114: Remove redundant delegate creation
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1114
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1114.severity = suggestion
+
+# RCS1118: Mark local variable as const
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1118
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1118.severity = suggestion
+
+# RCS1123: Add parentheses when necessary
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1123
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1123.severity = suggestion
+
+# RCS1124: Inline local variable
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1124
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1124.severity = silent
+
+# RCS1126: Add braces to if-else
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1126
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1126.severity = none
+
+# RCS1128: Use coalesce expression
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1128
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1128.severity = suggestion
+
+# RCS1129: Remove redundant field initialization
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1129
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1129.severity = silent
+
+# RCS1130: Bitwise operation on enum without Flags attribute
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1130
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1130.severity = suggestion
+
+# RCS1132: Remove redundant overriding member
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1132
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1132.severity = suggestion
+
+# RCS1133: Remove redundant Dispose/Close call
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1133
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1133.severity = silent
+
+# RCS1134: Remove redundant statement
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1134
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1134.severity = silent
+
+# RCS1135: Declare enum member with zero value (when enum has FlagsAttribute)
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1135
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1135.severity = suggestion
+
+# RCS1136: Merge switch sections with equivalent content
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1136
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1136.severity = silent
+
+# RCS1138: Add summary to documentation comment
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1138
+# Enabled: True, Severity: warning
+dotnet_diagnostic.RCS1138.severity = warning
+
+# RCS1139: Add summary element to documentation comment
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1139
+# Enabled: True, Severity: warning
+dotnet_diagnostic.RCS1139.severity = warning
+
+# RCS1140: Add exception to documentation comment
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1140
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1140.severity = silent
+
+# RCS1141: Add 'param' element to documentation comment
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1141
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1141.severity = silent
+
+# RCS1142: Add 'typeparam' element to documentation comment
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1142
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1142.severity = silent
+
+# RCS1143: Simplify coalesce expression
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1143
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1143.severity = silent
+
+# RCS1145: Remove redundant 'as' operator
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1145
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1145.severity = silent
+
+# RCS1146: Use conditional access
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1146
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1146.severity = suggestion
+
+# RCS1151: Remove redundant cast
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1151
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1151.severity = silent
+
+# RCS1154: Sort enum members
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1154
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1154.severity = suggestion
+
+# RCS1155: Use StringComparison when comparing strings
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1155
+# Enabled: True, Severity: warning
+dotnet_diagnostic.RCS1155.severity = warning
+
+# RCS1156: Use string.Length instead of comparison with empty string
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1156
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1156.severity = suggestion
+
+# RCS1157: Composite enum value contains undefined flag
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1157
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1157.severity = suggestion
+
+# RCS1158: Static member in generic type should use a type parameter
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1158
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1158.severity = suggestion
+
+# RCS1159: Use EventHandler<T>
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1159
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1159.severity = suggestion
+
+# RCS1160: Abstract type should not have public constructors
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1160
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1160.severity = suggestion
+
+# RCS1161: Enum should declare explicit values
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1161
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1161.severity = silent
+
+# RCS1162: Avoid chain of assignments
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1162
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1162.severity = none
+
+# RCS1163: Unused parameter
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1163
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1163.severity = suggestion
+
+# RCS1164: Unused type parameter
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1164
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1164.severity = suggestion
+
+# RCS1165: Unconstrained type parameter checked for null
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1165
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1165.severity = silent
+
+# RCS1166: Value type object is never equal to null
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1166
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1166.severity = suggestion
+
+# RCS1168: Parameter name differs from base name
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1168
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1168.severity = silent
+
+# RCS1169: Make field read-only
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1169
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1169.severity = suggestion
+
+# RCS1170: Use read-only auto-implemented property
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1170
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1170.severity = suggestion
+
+# RCS1171: Simplify lazy initialization
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1171
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1171.severity = suggestion
+
+# RCS1172: Use 'is' operator instead of 'as' operator
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1172
+# Enabled: True, Severity: warning
+dotnet_diagnostic.RCS1172.severity = warning
+
+# RCS1173: Use coalesce expression instead of 'if'
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1173
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1173.severity = suggestion
+
+# RCS1174: Remove redundant async/await
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1174
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1174.severity = none
+
+# RCS1175: Unused 'this' parameter
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1175
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1175.severity = suggestion
+
+# RCS1179: Unnecessary assignment
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1179
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1179.severity = suggestion
+
+# RCS1180: Inline lazy initialization
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1180
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1180.severity = suggestion
+
+# RCS1181: Convert comment to documentation comment
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1181
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1181.severity = silent
+
+# RCS1182: Remove redundant base interface
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1182
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1182.severity = silent
+
+# RCS1186: Use Regex instance instead of static method
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1186
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1186.severity = silent
+
+# RCS1187: Use constant instead of field
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1187
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1187.severity = suggestion
+
+# RCS1188: Remove redundant auto-property initialization
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1188
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1188.severity = silent
+
+# RCS1189: Add or remove region name
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1189
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1189.severity = silent
+
+# RCS1190: Join string expressions
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1190
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1190.severity = suggestion
+
+# RCS1191: Declare enum value as combination of names
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1191
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1191.severity = suggestion
+
+# RCS1192: Unnecessary usage of verbatim string literal
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1192
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1192.severity = suggestion
+
+# RCS1193: Overriding member should not change 'params' modifier
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1193
+# Enabled: True, Severity: warning
+dotnet_diagnostic.RCS1193.severity = warning
+
+# RCS1194: Implement exception constructors
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1194
+# Enabled: True, Severity: warning
+dotnet_diagnostic.RCS1194.severity = warning
+
+# RCS1195: Use ^ operator
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1195
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1195.severity = suggestion
+
+# RCS1196: Call extension method as instance method
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1196
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1196.severity = suggestion
+
+# RCS1197: Optimize StringBuilder.Append/AppendLine call
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1197
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1197.severity = suggestion
+
+# RCS1198: Avoid unnecessary boxing of value type
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1198
+# Enabled: False, Severity: warning
+dotnet_diagnostic.RCS1198.severity = none
+
+# RCS1199: Unnecessary null check
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1199
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1199.severity = suggestion
+
+# RCS1200: Call 'Enumerable.ThenBy' instead of 'Enumerable.OrderBy'
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1200
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1200.severity = suggestion
+
+# RCS1201: Use method chaining
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1201
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1201.severity = silent
+
+# RCS1202: Avoid NullReferenceException
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1202
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1202.severity = suggestion
+
+# RCS1203: Use AttributeUsageAttribute
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1203
+# Enabled: True, Severity: warning
+dotnet_diagnostic.RCS1203.severity = warning
+
+# RCS1204: Use EventArgs.Empty
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1204
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1204.severity = suggestion
+
+# RCS1205: Order named arguments according to the order of parameters
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1205
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1205.severity = suggestion
+
+# RCS1206: Use conditional access instead of conditional expression
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1206
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1206.severity = suggestion
+
+# RCS1207: Use anonymous function or method group
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1207
+# Enabled: False, Severity: silent
+dotnet_diagnostic.RCS1207.severity = none
+
+# RCS1208: Reduce 'if' nesting
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1208
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1208.severity = none
+
+# RCS1209: Order type parameter constraints
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1209
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1209.severity = suggestion
+
+# RCS1210: Return completed task instead of returning null
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1210
+# Enabled: True, Severity: warning
+dotnet_diagnostic.RCS1210.severity = warning
+
+# RCS1211: Remove unnecessary 'else'
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1211
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1211.severity = silent
+
+# RCS1212: Remove redundant assignment
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1212
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1212.severity = suggestion
+
+# RCS1213: Remove unused member declaration
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1213
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1213.severity = suggestion
+
+# RCS1214: Unnecessary interpolated string
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1214
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1214.severity = suggestion
+
+# RCS1215: Expression is always equal to true/false
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1215
+# Enabled: True, Severity: warning
+dotnet_diagnostic.RCS1215.severity = warning
+
+# RCS1216: Unnecessary unsafe context
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1216
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1216.severity = suggestion
+
+# RCS1217: Convert interpolated string to concatenation
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1217
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1217.severity = silent
+
+# RCS1218: Simplify code branching
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1218
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1218.severity = suggestion
+
+# RCS1220: Use pattern matching instead of combination of 'is' operator and cast operator
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1220
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1220.severity = suggestion
+
+# RCS1221: Use pattern matching instead of combination of 'as' operator and null check
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1221
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1221.severity = suggestion
+
+# RCS1222: Merge preprocessor directives
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1222
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1222.severity = suggestion
+
+# RCS1223: Mark publicly visible type with DebuggerDisplay attribute
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1223
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1223.severity = none
+
+# RCS1224: Make method an extension method
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1224
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1224.severity = suggestion
+
+# RCS1225: Make class sealed
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1225
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1225.severity = suggestion
+
+# RCS1226: Add paragraph to documentation comment
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1226
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1226.severity = suggestion
+
+# RCS1227: Validate arguments correctly
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1227
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1227.severity = suggestion
+
+# RCS1228: Unused element in a documentation comment
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1228
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1228.severity = silent
+
+# RCS1229: Use async/await when necessary
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1229
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1229.severity = suggestion
+
+# RCS1230: Unnecessary explicit use of enumerator
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1230
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1230.severity = suggestion
+
+# RCS1231: Make parameter ref read-only
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1231
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1231.severity = none
+
+# RCS1232: Order elements in documentation comment
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1232
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1232.severity = suggestion
+
+# RCS1233: Use short-circuiting operator
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1233
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1233.severity = suggestion
+
+# RCS1234: Duplicate enum value
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1234
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1234.severity = suggestion
+
+# RCS1235: Optimize method call
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1235
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1235.severity = suggestion
+
+# RCS1236: Use exception filter
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1236
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1236.severity = suggestion
+
+# RCS1238: Avoid nested ?: operators
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1238
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1238.severity = silent
+
+# RCS1239: Use 'for' statement instead of 'while' statement
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1239
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1239.severity = suggestion
+
+# RCS1240: Operator is unnecessary
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1240
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1240.severity = suggestion
+
+# RCS1241: Implement non-generic counterpart
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1241
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1241.severity = silent
+
+# RCS1242: Do not pass non-read-only struct by read-only reference
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1242
+# Enabled: True, Severity: warning
+dotnet_diagnostic.RCS1242.severity = warning
+
+# RCS1243: Duplicate word in a comment
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1243
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1243.severity = suggestion
+
+# RCS1244: Simplify 'default' expression
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1244
+# Enabled: True, Severity: silent
+dotnet_diagnostic.RCS1244.severity = silent
+
+# RCS1246: Use element access
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1246
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1246.severity = suggestion
+
+# RCS1247: Fix documentation comment tag
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1247
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1247.severity = suggestion
+
+# RCS1248: Normalize null check
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1248
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1248.severity = none
+
+# RCS1249: Unnecessary null-forgiving operator
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1249
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1249.severity = suggestion
+
+# RCS1250: Use implicit/explicit object creation
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1250
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1250.severity = none
+
+# RCS1251: Remove unnecessary braces from record declaration
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1251
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1251.severity = suggestion
+
+# RCS1252: Normalize usage of infinite loop
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1252
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1252.severity = none
+
+# RCS1253: Format documentation comment summary
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1253
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1253.severity = none
+
+# RCS1254: Normalize format of enum flag value
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1254
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1254.severity = suggestion
+
+# RCS1255: Simplify argument null check
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1255
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1255.severity = none
+
+# RCS1256: Invalid argument null check
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1256
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1256.severity = suggestion
+
+# RCS1257: Use enum field explicitly
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1257
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1257.severity = suggestion
+
+# RCS1258: Unnecessary enum flag
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1258
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1258.severity = suggestion
+
+# RCS1259: Remove empty syntax
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1259
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1259.severity = suggestion
+
+# RCS1260: Add/remove trailing comma
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1260
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1260.severity = none
+
+# RCS1261: Resource can be disposed asynchronously
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1261
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1261.severity = suggestion
+
+# RCS1262: Unnecessary raw string literal
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1262
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1262.severity = suggestion
+
+# RCS1263: Invalid reference in a documentation comment
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1263
+# Enabled: True, Severity: warning
+dotnet_diagnostic.RCS1263.severity = warning
+
+# RCS1264: Use 'var' or explicit type
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1264
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.RCS1264.severity = none
+
+# RCS1265: Remove redundant catch block
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1265
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1265.severity = suggestion
+
+# RCS1266: Use raw string literal
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1266
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1266.severity = suggestion
+
+# RCS1267: Use string interpolation instead of 'string.Concat'
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1267
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1267.severity = suggestion
+
+# RCS1268: Simplify numeric comparison
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1268
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.RCS1268.severity = suggestion
+
+# ROS0003: Analyzer requires config option to be specified
+# Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/
+# Enabled: False, Severity: suggestion
+dotnet_diagnostic.ROS0003.severity = none
+
+# Roslynator.FindSymbols.FindSymbolAnalyzer
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.Roslynator.FindSymbols.FindSymbolAnalyzer.severity = suggestion
+
