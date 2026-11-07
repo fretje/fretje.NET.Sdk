@@ -15,7 +15,7 @@ dotnet_diagnostic.IDE0004.severity = silent
 # IDE0005: Using directive is unnecessary.
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0005
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0005.severity = suggestion
+dotnet_diagnostic.IDE0005.severity = warning
 
 # IDE0005_gen: Using directive is unnecessary.
 # Enabled: True, Severity: silent
@@ -24,7 +24,7 @@ dotnet_diagnostic.IDE0005_gen.severity = silent
 # IDE0007: Use implicit type
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0007
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0007.severity = suggestion
+dotnet_diagnostic.IDE0007.severity = silent
 
 # IDE0008: Use explicit type
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0008
@@ -49,12 +49,12 @@ dotnet_diagnostic.IDE0011.severity = silent
 # IDE0016: Use 'throw' expression
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0016
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0016.severity = silent
+dotnet_diagnostic.IDE0016.severity = warning
 
 # IDE0017: Simplify object initialization
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0017
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0017.severity = suggestion
+dotnet_diagnostic.IDE0017.severity = silent
 
 # IDE0018: Inline variable declaration
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0018
