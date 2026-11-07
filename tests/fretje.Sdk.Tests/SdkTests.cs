@@ -1243,7 +1243,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
     [InlineData(TestPackages.AngleSharpCss, "'Meziantou.Framework.WebPlatform'", "AllowPackage_AngleSharp_Css")]
     [InlineData(TestPackages.MeziantouXunitParallelTestFramework, "the built-in parallelization of xunit.v3", "AllowPackage_Meziantou_Xunit_ParallelTestFramework")]
     [InlineData(TestPackages.MeziantouXunitV3ParallelTestFramework, "the built-in parallelization of xunit.v3", "AllowPackage_Meziantou_Xunit_v3_ParallelTestFramework")]
-    public async Task BannedPackageReference_TransitiveReference_IsReported(string packageName, string suggestion, string allowProperty)
+    public async Task BannedPackageReference_TransitiveReference_IsNotReported(string packageName, string suggestion, string allowProperty)
     {
         await using var project = CreateProjectBuilder();
         project.AddFile("Dependency/Dependency.csproj", $$"""
@@ -1264,10 +1264,10 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
         project.AddFile("Program.cs", """System.Console.WriteLine();""");
         var data = await project.BuildAndGetOutput();
 
-        Assert.Equal(1, data.ExitCode);
-        Assert.True(data.OutputContains($"Package '{packageName}' is not allowed.", StringComparison.Ordinal));
-        Assert.True(data.OutputContains($"Use {suggestion} instead.", StringComparison.Ordinal));
-        Assert.True(data.OutputContains($"{allowProperty}=true", StringComparison.Ordinal));
+        Assert.Equal(0, data.ExitCode);
+        Assert.False(data.OutputContains($"Package '{packageName}' is not allowed.", StringComparison.Ordinal));
+        Assert.False(data.OutputContains($"Use {suggestion} instead.", StringComparison.Ordinal));
+        Assert.False(data.OutputContains($"{allowProperty}=true", StringComparison.Ordinal));
     }
 
     [Theory]
