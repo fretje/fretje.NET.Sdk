@@ -137,7 +137,7 @@
   <ItemGroup>
     <!-- Add all editorconfig files -->
     <EditorConfigFiles Include="$(MSBuildThisFileDirectory)../configuration/*.editorconfig"
-                       Exclude="$(MSBuildThisFileDirectory)../configuration/fretje.NET.Sdk.*.editorconfig" />
+                       Exclude="$(MSBuildThisFileDirectory)../configuration/fretje.NET.Sdk*.editorconfig" />
     <EditorConfigFiles Include="$(MSBuildThisFileDirectory)../configuration/$(FretjeSdkName).editorconfig"
                        Condition="'$(FretjeSdkName)' != '' AND Exists('$(MSBuildThisFileDirectory)../configuration/$(FretjeSdkName).editorconfig')" />
     <EditorConfigFiles Include="$(MSBuildThisFileDirectory)../configuration/fretje.NET.Sdk.SingleFileApp.editorconfig"
