@@ -135,7 +135,7 @@ jobs:
         uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1
         id: login
         with:
-          user: ${{ env.NUGET_USER }}
+          user: ${{ vars.NUGET_USER }}
       - name: Must Publish Packages
         id: has_changes
         run: |
