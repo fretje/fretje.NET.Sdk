@@ -1027,7 +1027,7 @@ dotnet_diagnostic.MA0205.severity = suggestion
 # MA0206: Remove unnecessary braces in type declaration
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0206.md
 # Enabled: True, Severity: suggestion
-dotnet_diagnostic.MA0206.severity = warning
+dotnet_diagnostic.MA0206.severity = none
 
 # MA0207: [FixedAddressValueType] fields must be static
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0207.md

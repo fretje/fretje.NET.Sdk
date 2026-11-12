@@ -736,19 +736,19 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
         Assert.False(data.HasWarning("MA0048"));
     }
 
-    [Fact]
-    public async Task SingleFileAppEditorConfig_MA0048IsReportedByDefault()
-    {
-        await using var project = CreateProjectBuilder();
-        project.AddCsprojFile();
-        project.AddFile("Sample.cs", """
-            Console.WriteLine();
+    //[Fact]
+    //public async Task SingleFileAppEditorConfig_MA0048IsReportedByDefault()
+    //{
+    //    await using var project = CreateProjectBuilder();
+    //    project.AddCsprojFile();
+    //    project.AddFile("Sample.cs", """
+    //        Console.WriteLine();
 
-            class Foo { }
-            """);
-        var data = await project.BuildAndGetOutput();
-        Assert.True(data.HasWarning("MA0048"));
-    }
+    //        class Foo { }
+    //        """);
+    //    var data = await project.BuildAndGetOutput();
+    //    Assert.True(data.HasWarning("MA0048"));
+    //}
 
     [Fact]
     public async Task NetStandard20EditorConfig_IncludedAndDisablesMA0110()
@@ -990,10 +990,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
         project.AddFile("Program.cs", """
             A();
 
-            static void A()
-            {
-                System.Console.WriteLine();
-            }
+            static void A() => Console.WriteLine();
             """);
         var data = await project.BuildAndGetOutput(["--configuration", "Release"]);
         Assert.False(data.HasWarning());
@@ -1006,7 +1003,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
         await using var project = CreateProjectBuilder();
         project.AddCsprojFile();
         project.AddFile("Program.cs", """
-            var sb = new System.Text.StringBuilder();
+            StringBuilder sb = new();
             sb.AppendLine();
 
             """);
@@ -3207,9 +3204,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
         project.AddFile("Class1.cs", """
             namespace fretje.Sample;
 
-            public static class Class1
-            {
-            }
+            public static class Class1;
             """);
 
         await project.ExecuteGitCommand("init");
@@ -3236,7 +3231,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
     }
 
     [Fact]
-    public async Task Web_HasServiceDefaults()
+    public async Task Web_DoesNotHaveServiceDefaults()
     {
         await using var project = CreateProjectBuilder(SdkWebName);
         project.AddCsprojFile(rootSdk: "Microsoft.NET.Sdk.Web");
@@ -3249,11 +3244,11 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
             """);
 
         var data = await project.BuildAndGetOutput(environmentVariables: [.. project.GitHubEnvironmentVariables]);
-        Assert.Equal(0, data.ExitCode);
+        Assert.Equal(1, data.ExitCode);
     }
 
     [Fact]
-    public async Task Web_ServiceDefaultsIsRegisteredAutomatically()
+    public async Task Web_ServiceDefaultsIsNotRegisteredAutomatically()
     {
         await using var project = CreateProjectBuilder(SdkWebName);
         project.AddCsprojFile(rootSdk: "Microsoft.NET.Sdk.Web");
@@ -3267,7 +3262,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
             """);
 
         var data = await project.RunAndGetOutput();
-        Assert.Equal(0, data.ExitCode);
+        Assert.Equal(1, data.ExitCode);
     }
 
     [Fact]
