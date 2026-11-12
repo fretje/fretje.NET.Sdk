@@ -92,7 +92,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runs-on: [ubuntu-latest, windows-latest, macos-latest]
+        runs-on: [ubuntu-latest, windows-latest]
         shard-index: [1, 2, 3, 4]
     runs-on: ${{ matrix.runs-on }}
     needs: [create_nuget, compute_version]
