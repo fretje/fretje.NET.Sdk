@@ -2,12 +2,12 @@ name: publish
 on:
   push:
     branches:
-      - "main"
+      - "fretje"
   pull_request:
   workflow_dispatch:
 
 concurrency:
-  group: ${{ github.ref == 'refs/heads/main' && 'ci-main' || format('ci-{0}-{1}', github.ref, github.run_id) }}
+  group: ${{ github.ref == 'refs/heads/fretje' && 'ci-fretje' || format('ci-{0}-{1}', github.ref, github.run_id) }}
   cancel-in-progress: false
 
 env:
@@ -135,7 +135,7 @@ jobs:
         uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1
         id: login
         with:
-          user: meziantou
+          user: ${{ env.NUGET_USER }}
       - name: Must Publish Packages
         id: has_changes
         run: |
@@ -162,22 +162,20 @@ jobs:
         if: ${{ steps.has_changes.outputs.has_changes == 'true' }}
         env:
           NuGetApiKey: ${{steps.login.outputs.NUGET_API_KEY}}
-          FeedzApiKey: ${{ secrets.FEEDZ_APIKEY }}
         run: |
           Write-Host "Current ref: $env:GITHUB_REF"
           Write-Host "Searching nupkg in folder: ${{ env.NUGET_DIRECTORY }}"
           $files = Get-ChildItem "${{ env.NUGET_DIRECTORY }}/*" -Recurse -Include *.nupkg
           foreach ($file in $files) {
               Write-Host "Pushing NuGet package: $($file.FullName)"
-              & dotnet nuget push "$($file.FullName)" --api-key "$env:FeedzApiKey" --source https://f.feedz.io/meziantou/meziantou-dotnet-codingstandard/nuget/index.json --force-english-output --skip-duplicate
-              if ($env:GITHUB_REF -eq 'refs/heads/main')
+              if ($env:GITHUB_REF -eq 'refs/heads/fretje')
               {
                   & dotnet nuget push "$($file.FullName)" --api-key "$env:NuGetApiKey" --source https://api.nuget.org/v3/index.json --force-english-output --skip-duplicate
               }
           }
 
       - run: gh release create "${{ needs.compute_version.outputs.package_version }}" --generate-notes
-        if: ${{ steps.has_changes.outputs.has_changes == 'true' && github.ref == 'refs/heads/main' }}
+        if: ${{ steps.has_changes.outputs.has_changes == 'true' && github.ref == 'refs/heads/fretje' }}
         env:
           GH_TOKEN: ${{ github.token }}
 
