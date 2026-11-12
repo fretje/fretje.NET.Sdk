@@ -261,7 +261,7 @@
        change the imported assets. -->
   <PropertyGroup>
     <DefaultPackageIncludeAssets Condition="'$(DefaultPackageIncludeAssets)' == ''">runtime;compile</DefaultPackageIncludeAssets>
-    <DefaultPackageIncludeAssetsExcludedPackagePattern Condition="'$(DefaultPackageIncludeAssetsExcludedPackagePattern)' == ''">^(?i:(Meziantou|fretje|Microsoft|System)\.|xunit)</DefaultPackageIncludeAssetsExcludedPackagePattern>
+    <DefaultPackageIncludeAssetsExcludedPackagePattern Condition="'$(DefaultPackageIncludeAssetsExcludedPackagePattern)' == ''">^(?i:(Meziantou|fretje|Syncfusion|Microsoft|System)\.|^MudBlazor$|xunit)</DefaultPackageIncludeAssetsExcludedPackagePattern>
     <_DefaultPackageIncludeAssetsIncludesAnalyzers Condition="$([System.Text.RegularExpressions.Regex]::IsMatch('$(DefaultPackageIncludeAssets)', '(?i:(^|;)\s*(all|analyzers)\s*(;|$))'))">true</_DefaultPackageIncludeAssetsIncludesAnalyzers>
   </PropertyGroup>
 
