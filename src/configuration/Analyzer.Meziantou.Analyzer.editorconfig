@@ -8,7 +8,7 @@ MA0015.consider_member_access_as_parameter = true
 # MA0001: StringComparison is missing
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0001.md
 # Enabled: True, Severity: suggestion
-dotnet_diagnostic.MA0001.severity = warning
+dotnet_diagnostic.MA0001.severity = suggestion
 
 # MA0002: IEqualityComparer<string> or IComparer<string> is missing
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0002.md
@@ -18,12 +18,12 @@ dotnet_diagnostic.MA0002.severity = warning
 # MA0003: Add parameter name to improve readability
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0003.md
 # Enabled: True, Severity: suggestion
-dotnet_diagnostic.MA0003.severity = warning
+dotnet_diagnostic.MA0003.severity = suggestion
 
 # MA0004: Use Task.ConfigureAwait
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0004.md
 # Enabled: True, Severity: warning
-dotnet_diagnostic.MA0004.severity = silent
+dotnet_diagnostic.MA0004.severity = none
 
 # MA0005: Use Array.Empty<T>()
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0005.md
@@ -136,7 +136,7 @@ dotnet_diagnostic.MA0025.severity = warning
 # MA0026: Fix TODO comment
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0026.md
 # Enabled: True, Severity: warning
-dotnet_diagnostic.MA0026.severity = warning
+dotnet_diagnostic.MA0026.severity = suggestion
 
 # MA0027: Prefer rethrowing an exception implicitly
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0027.md
@@ -201,7 +201,7 @@ dotnet_diagnostic.MA0039.severity = error
 # MA0040: Forward the CancellationToken parameter to methods that take one
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0040.md
 # Enabled: True, Severity: suggestion
-dotnet_diagnostic.MA0040.severity = suggestion
+dotnet_diagnostic.MA0040.severity = warning
 
 # MA0041: Make property static (deprecated, use CA1822 instead)
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0041.md
@@ -211,7 +211,7 @@ dotnet_diagnostic.MA0041.severity = none
 # MA0042: Do not use blocking calls when the calling method is async
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0042.md
 # Enabled: True, Severity: suggestion
-dotnet_diagnostic.MA0042.severity = suggestion
+dotnet_diagnostic.MA0042.severity = warning
 
 # MA0043: Use nameof operator in ArgumentException
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0043.md
@@ -241,7 +241,7 @@ dotnet_diagnostic.MA0047.severity = warning
 # MA0048: File name must match type name
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0048.md
 # Enabled: True, Severity: warning
-dotnet_diagnostic.MA0048.severity = warning
+dotnet_diagnostic.MA0048.severity = none
 
 # MA0049: Type name should not match containing namespace
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0049.md
@@ -707,12 +707,12 @@ dotnet_diagnostic.MA0140.severity = warning
 # MA0141: Use 'is not null' instead of '!= null'
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0141.md
 # Enabled: False, Severity: suggestion
-dotnet_diagnostic.MA0141.severity = suggestion
+dotnet_diagnostic.MA0141.severity = none
 
 # MA0142: Use 'is null' instead of '== null'
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0142.md
 # Enabled: False, Severity: suggestion
-dotnet_diagnostic.MA0142.severity = suggestion
+dotnet_diagnostic.MA0142.severity = none
 
 # MA0143: Primary constructor parameters should be readonly
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0143.md
@@ -742,12 +742,12 @@ dotnet_diagnostic.MA0147.severity = warning
 # MA0148: Use 'is' patterns instead of '==' for constant values
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0148.md
 # Enabled: False, Severity: suggestion
-dotnet_diagnostic.MA0148.severity = suggestion
+dotnet_diagnostic.MA0148.severity = warning
 
 # MA0149: Use 'is not' patterns instead of '!=' for constant values
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0149.md
 # Enabled: False, Severity: suggestion
-dotnet_diagnostic.MA0149.severity = suggestion
+dotnet_diagnostic.MA0149.severity = warning
 
 # MA0150: Do not call ToString() when the type falls back to object.ToString()
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0150.md
@@ -927,7 +927,7 @@ dotnet_diagnostic.MA0185.severity = suggestion
 # MA0186: Equals method should use [NotNullWhen(true)] on the parameter
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0186.md
 # Enabled: False, Severity: suggestion
-dotnet_diagnostic.MA0186.severity = suggestion
+dotnet_diagnostic.MA0186.severity = warning
 
 # MA0187: Use constructor injection instead of [Inject] attribute
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0187.md
@@ -947,7 +947,7 @@ dotnet_diagnostic.MA0189.severity = suggestion
 # MA0190: Use partial property instead of partial method for GeneratedRegex
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0190.md
 # Enabled: True, Severity: suggestion
-dotnet_diagnostic.MA0190.severity = suggestion
+dotnet_diagnostic.MA0190.severity = warning
 
 # MA0191: Do not use the null-forgiving operator
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0191.md
@@ -1017,7 +1017,7 @@ dotnet_diagnostic.MA0203.severity = warning
 # MA0204: Remove unnecessary partial modifier
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0204.md
 # Enabled: True, Severity: suggestion
-dotnet_diagnostic.MA0204.severity = suggestion
+dotnet_diagnostic.MA0204.severity = none
 
 # MA0205: Use exclusive or operator
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0205.md
@@ -1027,7 +1027,7 @@ dotnet_diagnostic.MA0205.severity = suggestion
 # MA0206: Remove unnecessary braces in type declaration
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0206.md
 # Enabled: True, Severity: suggestion
-dotnet_diagnostic.MA0206.severity = suggestion
+dotnet_diagnostic.MA0206.severity = warning
 
 # MA0207: [FixedAddressValueType] fields must be static
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0207.md

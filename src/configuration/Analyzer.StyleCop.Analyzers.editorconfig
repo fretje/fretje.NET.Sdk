@@ -3,6 +3,7 @@ is_global = true
 global_level = 0
 
 stylecop.naming.allowedNamespaceComponents = fretje
+stylecop.ordering.memberKindOrder = field, constructor, destructor, delegate, event, property, indexer, conversionOperator, operator, method, enum, interface, struct, class, extension
 
 # SA0001: XML comment analysis disabled
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA0001.html
@@ -157,7 +158,7 @@ dotnet_diagnostic.SA1027.severity = warning
 # SA1028: Code should not contain trailing whitespace
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1028.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1028.severity = warning
+dotnet_diagnostic.SA1028.severity = none
 
 # SA1100: Do not prefix calls with base unless local implementation exists
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1100.html
@@ -202,7 +203,7 @@ dotnet_diagnostic.SA1107.severity = warning
 # SA1108: Block statements should not contain embedded comments
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1108.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1108.severity = warning
+dotnet_diagnostic.SA1108.severity = none
 
 # SA1109: Block statements should not contain embedded regions
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1109.html
@@ -407,7 +408,7 @@ dotnet_diagnostic.SA1205.severity = warning
 # SA1206: Declaration keywords should follow order
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1206.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1206.severity = warning
+dotnet_diagnostic.SA1206.severity = silent
 
 # SA1207: Protected should come before internal
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1207.html
@@ -627,7 +628,7 @@ dotnet_diagnostic.SA1414.severity = warning
 # SA1500: Braces for multi-line statements should not share line
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1500.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1500.severity = warning
+dotnet_diagnostic.SA1500.severity = silent
 
 # SA1501: Statement should not be on a single line
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1501.html

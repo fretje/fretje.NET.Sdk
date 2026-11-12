@@ -258,7 +258,7 @@ dotnet_diagnostic.IDE0059.severity = warning
 # IDE0060: Remove unused parameter
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0060
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0060.severity = warning
+dotnet_diagnostic.IDE0060.severity = silent
 
 # IDE0061: Use expression body for local function
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0061

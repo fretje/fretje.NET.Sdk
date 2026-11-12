@@ -7,3 +7,8 @@ roslynator_configure_await = false
 # RCS1046: Asynchronous method name should end with 'Async'
 dotnet_diagnostic.RCS1046.severity = silent
 
+# CA1819: Properties should not return arrays
+dotnet_diagnostic.CA1819.severity = suggestion
+
+# CA2025: Do not pass 'IDisposable' instances into unawaited tasks
+dotnet_diagnostic.CA2025.severity = suggestion

@@ -37,7 +37,7 @@ dotnet_diagnostic.CA1005.severity = warning
 # CA1008: Enums should have zero value
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1008
 # Enabled: False, Severity: warning
-dotnet_diagnostic.CA1008.severity = warning
+dotnet_diagnostic.CA1008.severity = suggestion
 
 # CA1010: Generic interface should also be implemented
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1010
@@ -87,7 +87,7 @@ dotnet_diagnostic.CA1024.severity = none
 # CA1027: Mark enums with FlagsAttribute
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1027
 # Enabled: False, Severity: warning
-dotnet_diagnostic.CA1027.severity = warning
+dotnet_diagnostic.CA1027.severity = suggestion
 
 # CA1028: Enum Storage should be Int32
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1028
@@ -97,7 +97,7 @@ dotnet_diagnostic.CA1028.severity = none
 # CA1030: Use events where appropriate
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1030
 # Enabled: False, Severity: warning
-dotnet_diagnostic.CA1030.severity = warning
+dotnet_diagnostic.CA1030.severity = suggestion
 
 # CA1031: Do not catch general exception types
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1031
@@ -107,7 +107,7 @@ dotnet_diagnostic.CA1031.severity = none
 # CA1032: Implement standard exception constructors
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1032
 # Enabled: False, Severity: warning
-dotnet_diagnostic.CA1032.severity = warning
+dotnet_diagnostic.CA1032.severity = none
 
 # CA1033: Interface methods should be callable by child types
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1033
@@ -117,7 +117,7 @@ dotnet_diagnostic.CA1033.severity = none
 # CA1034: Nested types should not be visible
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1034
 # Enabled: False, Severity: warning
-dotnet_diagnostic.CA1034.severity = warning
+dotnet_diagnostic.CA1034.severity = suggestion
 
 # CA1036: Override methods on comparable types
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1036
@@ -127,7 +127,7 @@ dotnet_diagnostic.CA1036.severity = warning
 # CA1040: Avoid empty interfaces
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1040
 # Enabled: False, Severity: warning
-dotnet_diagnostic.CA1040.severity = warning
+dotnet_diagnostic.CA1040.severity = suggestion
 
 # CA1041: Provide ObsoleteAttribute message
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1041
@@ -177,17 +177,17 @@ dotnet_diagnostic.CA1052.severity = warning
 # CA1054: URI-like parameters should not be strings
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1054
 # Enabled: False, Severity: warning
-dotnet_diagnostic.CA1054.severity = warning
+dotnet_diagnostic.CA1054.severity = suggestion
 
 # CA1055: URI-like return values should not be strings
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1055
 # Enabled: False, Severity: warning
-dotnet_diagnostic.CA1055.severity = warning
+dotnet_diagnostic.CA1055.severity = suggestion
 
 # CA1056: URI-like properties should not be strings
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1056
 # Enabled: False, Severity: warning
-dotnet_diagnostic.CA1056.severity = warning
+dotnet_diagnostic.CA1056.severity = suggestion
 
 # CA1058: Types should not extend certain base types
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1058
@@ -278,7 +278,7 @@ dotnet_diagnostic.CA1307.severity = warning
 # CA1308: Normalize strings to uppercase
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1308
 # Enabled: False, Severity: warning
-dotnet_diagnostic.CA1308.severity = warning
+dotnet_diagnostic.CA1308.severity = suggestion
 
 # CA1309: Use ordinal string comparison
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1309
@@ -760,7 +760,7 @@ dotnet_diagnostic.CA1864.severity = suggestion
 # CA1865: Use char overload
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1865
 # Enabled: True, Severity: suggestion
-dotnet_diagnostic.CA1865.severity = suggestion
+dotnet_diagnostic.CA1865.severity = warning
 
 # CA1866: Use char overload
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1866
@@ -876,7 +876,7 @@ dotnet_diagnostic.CA2015.severity = warning
 # CA2016: Forward the 'CancellationToken' parameter to methods
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2016
 # Enabled: True, Severity: suggestion
-dotnet_diagnostic.CA2016.severity = warning
+dotnet_diagnostic.CA2016.severity = none
 
 # CA2017: Parameter count mismatch
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2017
@@ -941,7 +941,7 @@ dotnet_diagnostic.CA2028.severity = suggestion
 # CA2100: Review SQL queries for security vulnerabilities
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2100
 # Enabled: False, Severity: warning
-dotnet_diagnostic.CA2100.severity = warning
+dotnet_diagnostic.CA2100.severity = suggestion
 
 # CA2101: Specify marshaling for P/Invoke string arguments
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2101
@@ -991,7 +991,7 @@ dotnet_diagnostic.CA2213.severity = warning
 # CA2214: Do not call overridable methods in constructors
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2214
 # Enabled: False, Severity: warning
-dotnet_diagnostic.CA2214.severity = warning
+dotnet_diagnostic.CA2214.severity = none
 
 # CA2215: Dispose methods should call base class dispose
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2215
@@ -1581,7 +1581,7 @@ dotnet_diagnostic.CA5391.severity = warning
 # CA5392: Use DefaultDllImportSearchPaths attribute for P/Invokes
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5392
 # Enabled: False, Severity: warning
-dotnet_diagnostic.CA5392.severity = warning
+dotnet_diagnostic.CA5392.severity = suggestion
 
 # CA5393: Do not use unsafe DllImportSearchPath value
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5393

@@ -353,7 +353,7 @@ dotnet_diagnostic.RCS1078.severity = warning
 # RCS1079: Throwing of new NotImplementedException
 # Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1079
 # Enabled: False, Severity: suggestion
-dotnet_diagnostic.RCS1079.severity = warning
+dotnet_diagnostic.RCS1079.severity = none
 
 # RCS1080: Use 'Count/Length' property instead of 'Any' method
 # Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1080
@@ -453,7 +453,7 @@ dotnet_diagnostic.RCS1110.severity = suggestion
 # RCS1111: Add braces to switch section with multiple statements
 # Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1111
 # Enabled: False, Severity: suggestion
-dotnet_diagnostic.RCS1111.severity = warning
+dotnet_diagnostic.RCS1111.severity = none
 
 # RCS1112: Combine 'Enumerable.Where' method chain
 # Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1112
@@ -643,7 +643,7 @@ dotnet_diagnostic.RCS1166.severity = warning
 # RCS1168: Parameter name differs from base name
 # Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1168
 # Enabled: True, Severity: silent
-dotnet_diagnostic.RCS1168.severity = warning
+dotnet_diagnostic.RCS1168.severity = none
 
 # RCS1169: Make field read-only
 # Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1169
@@ -763,7 +763,7 @@ dotnet_diagnostic.RCS1197.severity = warning
 # RCS1198: Avoid unnecessary boxing of value type
 # Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1198
 # Enabled: False, Severity: warning
-dotnet_diagnostic.RCS1198.severity = warning
+dotnet_diagnostic.RCS1198.severity = suggestion
 
 # RCS1199: Unnecessary null check
 # Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1199
@@ -808,12 +808,12 @@ dotnet_diagnostic.RCS1206.severity = warning
 # RCS1207: Use anonymous function or method group
 # Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1207
 # Enabled: False, Severity: silent
-dotnet_diagnostic.RCS1207.severity = warning
+dotnet_diagnostic.RCS1207.severity = suggestion
 
 # RCS1208: Reduce 'if' nesting
 # Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1208
 # Enabled: False, Severity: suggestion
-dotnet_diagnostic.RCS1208.severity = warning
+dotnet_diagnostic.RCS1208.severity = silent
 
 # RCS1209: Order type parameter constraints
 # Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1209
@@ -923,7 +923,7 @@ dotnet_diagnostic.RCS1230.severity = warning
 # RCS1231: Make parameter ref read-only
 # Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1231
 # Enabled: False, Severity: suggestion
-dotnet_diagnostic.RCS1231.severity = warning
+dotnet_diagnostic.RCS1231.severity = suggestion
 
 # RCS1232: Order elements in documentation comment
 # Help link: https://josefpihrt.github.io/docs/roslynator/analyzers/RCS1232

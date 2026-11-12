@@ -60,7 +60,7 @@ dotnet_diagnostic.VSTHRD102.severity = suggestion
 # VSTHRD103: Call async methods when in an async method
 # Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD103.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.VSTHRD103.severity = warning
+dotnet_diagnostic.VSTHRD103.severity = none
 
 # VSTHRD104: Offer async methods
 # Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD104.html
@@ -100,7 +100,7 @@ dotnet_diagnostic.VSTHRD110.severity = warning
 # VSTHRD111: Use ConfigureAwait(bool)
 # Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD111.html
 # Enabled: True, Severity: silent
-dotnet_diagnostic.VSTHRD111.severity = silent
+dotnet_diagnostic.VSTHRD111.severity = none
 
 # VSTHRD112: Implement System.IAsyncDisposable
 # Help link: https://microsoft.github.io/vs-threading/analyzers/VSTHRD112.html

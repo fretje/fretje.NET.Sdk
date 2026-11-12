@@ -1,0 +1,21 @@
+# global_level must be higher than the base editorconfig files
+is_global = true
+global_level = 1
+
+# RCS1242: Do not pass non-read-only struct by read-only reference
+dotnet_diagnostic.RCS1242.severity = none
+
+# IDE0370: Remove unnecessary suppression
+dotnet_diagnostic.IDE0370.severity = none
+
+# RCS1043: Remove 'partial' modifier from type with a single part
+# gives too many false positives due to regex source generator
+dotnet_diagnostic.RCS1043.severity = none
+
+# Suppress nullable reference type warnings (.NET Framework doesn't have the attributes)
+dotnet_diagnostic.CS8597.severity = none
+dotnet_diagnostic.CS8601.severity = none
+dotnet_diagnostic.CS8602.severity = none
+dotnet_diagnostic.CS8603.severity = none
+dotnet_diagnostic.CS8604.severity = none
+dotnet_diagnostic.CS8619.severity = none
