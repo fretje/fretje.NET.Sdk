@@ -751,7 +751,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
     }
 
     [Fact]
-    public async Task NetStandard20MultiTargetEditorConfig_IncludedAndDisablesMA0110()
+    public async Task NetStandard20EditorConfig_IncludedAndDisablesMA0110()
     {
         var commonPropsPath = PathHelpers.GetRootDirectory() / "src" / "common" / "Common.props";
         var commonTargetsPath = PathHelpers.GetRootDirectory() / "src" / "common" / "Common.targets";
@@ -789,8 +789,50 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
         var multiTargetData = await project.BuildAndGetOutput(["-p:TargetFramework=netstandard2.0"]);
         var editorConfigFiles = multiTargetData.GetBinLogFiles();
 
-        Assert.Contains(editorConfigFiles, f => f.EndsWith("fretje.NET.Sdk.NetStandard2_0.MultiTarget.editorconfig", StringComparison.Ordinal));
+        Assert.Contains(editorConfigFiles, f => f.EndsWith("fretje.NET.Sdk.NetStandard2_0.editorconfig", StringComparison.Ordinal));
         Assert.False(multiTargetData.HasNote("MA0110"));
+    }
+
+    [Fact]
+    public async Task NetFrameworkEditorConfig_IncludedAndDisablesRCS1242()
+    {
+        if (!OperatingSystem.IsWindows())
+        {
+            return;
+        }
+
+        var commonPropsPath = PathHelpers.GetRootDirectory() / "src" / "common" / "Common.props";
+        var commonTargetsPath = PathHelpers.GetRootDirectory() / "src" / "common" / "Common.targets";
+
+        await using var project = CreateProjectBuilder("Microsoft.NET.Sdk");
+        project.AddDirectoryBuildPropsFile($"""<Import Project="{commonPropsPath}" />""");
+        project.AddFile("Sample.cs", """
+            using System.Collections.Generic;
+
+            public static class Sample
+            {
+                public static void Foo(IReadOnlyList<string> list) { }
+
+                public static void Bar()
+                {
+                    var items = new List<string>();
+                    Foo(items);
+                }
+            }
+            """);
+
+        project.AddCsprojFile(
+            properties: [("TargetFramework", "net472"), ("OutputType", "Library")],
+            additionalProjectElements:
+            [
+                new XElement("Import", new XAttribute("Project", commonTargetsPath)),
+            ]);
+
+        var data = await project.BuildAndGetOutput();
+        var editorConfigFiles = data.GetBinLogFiles();
+
+        Assert.Contains(editorConfigFiles, f => f.EndsWith("fretje.NET.Sdk.NetFramework.editorconfig", StringComparison.Ordinal));
+        Assert.False(data.HasWarning("RCS1242"));
     }
 
     [Fact]

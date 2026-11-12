@@ -77,10 +77,10 @@
 		<Version Condition="'$(_GitHubTagVersionIsValid)' != 'true' AND '$(_IsGitHubMain)' != 'true' AND '$(EnableGitHubBuildVersionSuffix)' != 'false' AND '$(GITHUB_SHA)' != '' AND '$(_GitHubBaseVersion)' != ''">$(_GitHubBaseVersion)-build-$(GITHUB_SHA)</Version>
 	</PropertyGroup>
 
-	<ItemGroup Condition="'$(UsingMicrosoftNETSdkWeb)' == 'true'">
+	<!--<ItemGroup Condition="'$(UsingMicrosoftNETSdkWeb)' == 'true'">
 		<PackageReference Include="Meziantou.AspNetCore.ServiceDefaults" Version="2.0.16" IsImplicitlyDefined="true" />
 		<PackageReference Include="Meziantou.AspNetCore.ServiceDefaults.AutoRegister" Version="2.0.2" IsImplicitlyDefined="true" Condition="'$(AutoRegisterServiceDefaults)' != 'false'" />
-	</ItemGroup>
+	</ItemGroup>-->
 
 	<!-- Ensure application can run with newer frameworks -->
 	<PropertyGroup>
@@ -174,8 +174,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-			<EditorConfigFiles Include="$(MSBuildThisFileDirectory)../configuration/fretje.NET.Sdk.NetStandard2_0.MultiTarget.editorconfig"
-		                     Condition="'$(TargetFrameworks)' != '' AND $([System.Text.RegularExpressions.Regex]::IsMatch($([System.Text.RegularExpressions.Regex]::Replace('$(TargetFrameworks)', '\s+', '')), '^(?=.*;)(?=.*(?:^|;)netstandard2\.0(?:$|;)).+$'))" />
+		<EditorConfigFiles Include="$(MSBuildThisFileDirectory)../configuration/fretje.NET.Sdk.NetStandard2_0.editorconfig"
+		                   Condition="'$(TargetFrameworkIdentifier)' == '.NETStandard'" />
+		<EditorConfigFiles Include="$(MSBuildThisFileDirectory)../configuration/fretje.NET.Sdk.NetFramework.editorconfig"
+		                   Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework'" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Language)' == 'C#' AND ('$(ImplicitUsings)' == 'true' or '$(ImplicitUsings)' == 'enable')">
