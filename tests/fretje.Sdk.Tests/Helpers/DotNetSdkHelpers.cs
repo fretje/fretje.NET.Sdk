@@ -12,7 +12,7 @@ namespace fretje.Sdk.Tests.Helpers;
 public static class DotNetSdkHelpers
 {
     private const string Net10SdkVersion = "10.0.403";
-    private const string Net11SdkVersion = "11.0.100-rc.3.26522.148";
+    private const string Net11SdkVersion = "11.0.100";
 
     private static readonly ConcurrentDictionary<NetSdkVersion, FullPath> Values = new();
     private static readonly KeyedAsyncLock<NetSdkVersion> KeyedAsyncLock = new();
