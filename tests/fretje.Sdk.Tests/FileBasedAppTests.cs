@@ -117,7 +117,7 @@ public abstract class FileBasedAppTests(PackageFixture fixture, ITestOutputHelpe
             public class SampleTests
             {
                 [Fact]
-                public async Task Test1() => await Task.Delay(1, XunitCancellationToken);
+                public async Task Test1() => await Task.Delay(1, XunitCt);
             }
             """);
 

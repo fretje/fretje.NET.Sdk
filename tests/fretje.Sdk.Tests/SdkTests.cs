@@ -2222,7 +2222,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
             public class Tests
             {
                 [Fact]
-                public async Task Test1() => await Task.Delay(1, XunitCancellationToken);
+                public async Task Test1() => await Task.Delay(1, XunitCt);
 
                 [Theory]
                 [InlineData(1)]
@@ -2268,7 +2268,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
             public class SampleTests(ITestOutputHelper testOutputHelper)
             {
                 [Fact]
-                public async Task Test1() => await Task.Delay(1, XunitCancellationToken);
+                public async Task Test1() => await Task.Delay(1, XunitCt);
 
                 [Theory]
                 [InlineData(1)]
@@ -2337,7 +2337,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
             public class Tests
             {
                 [Fact]
-                public async Task Test1() => await Task.Delay(1, XunitCancellationToken);
+                public async Task Test1() => await Task.Delay(1, XunitCt);
             }
             """);
 
@@ -2705,7 +2705,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
     }
 
     [Fact]
-    public async Task MTP_XunitStaticHelpers_XunitCancellationTokenIsAvailableByDefault()
+    public async Task MTP_XunitStaticHelpers_XunitCtIsAvailableByDefault()
     {
         await using var project = CreateProjectBuilder(SdkTestName);
         project.AddCsprojFile(filename: "Sample.Tests.csproj");
@@ -2717,8 +2717,8 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
                 [Fact]
                 public async Task Test1()
                 {
-                    Assert.False(XunitCancellationToken.IsCancellationRequested);
-                    await Task.Delay(1, XunitCancellationToken);
+                    Assert.False(XunitCt.IsCancellationRequested);
+                    await Task.Delay(1, XunitCt);
                 }
             }
             """);
