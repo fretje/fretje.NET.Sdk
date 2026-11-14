@@ -53,22 +53,21 @@ public sealed class PackageFixture : IAsyncLifetime
         // Build NuGet packages
         var buildFiles = Directory.GetFiles(PathHelpers.GetRootDirectory() / "src", "*.csproj").Select(FullPath.FromPath);
         Assert.NotEmpty(buildFiles);
-        await Parallel.ForEachAsync(buildFiles, async (projectPath, ct) =>
+        foreach (var projectPath in buildFiles)
         {
             using var timeoutCts = new CancellationTokenSource(TimeSpan.FromMinutes(10));
-            using var linkedCts = CancellationTokenSource.CreateLinkedTokenSource(timeoutCts.Token, ct);
             var result = await ProcessWrapper.Create("dotnet")
                 .WithArguments("pack", "--disable-build-servers", projectPath, "-p:Version=" + Version, "--output", _packageDirectory.FullPath)
                 .WithEnvironmentVariables(env => env
                     .Set("MSBUILDDISABLENODEREUSE", "1")
                     .Set("DOTNET_CLI_USE_MSBUILDNOINPROCNODE", "1"))
                 .WithValidation(ProcessValidationMode.None)
-                .ExecuteBufferedAsync(linkedCts.Token);
+                .ExecuteBufferedAsync(timeoutCts.Token);
             if (!result.ExitCode.IsSuccess)
             {
                 Assert.Fail($"NuGet pack failed with exit code {result.ExitCode}. Output: {result.Output}");
             }
-        });
+        }
     }
 
     public async ValueTask DisposeAsync()

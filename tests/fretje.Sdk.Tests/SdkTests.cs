@@ -94,6 +94,24 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
     }
 
     [Fact]
+    public async Task IncludeMeziantouPolyfill_IsIncludedByDefault()
+    {
+        await using var project = CreateProjectBuilder();
+        project.AddCsprojFile();
+        var data = await project.BuildAndGetOutput();
+        Assert.Contains("Meziantou.Polyfill", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
+    }
+
+    [Fact]
+    public async Task IncludeMeziantouPolyfill_CanBeDisabled()
+    {
+        await using var project = CreateProjectBuilder();
+        project.AddCsprojFile(properties: [("IncludeMeziantouPolyfill", "false")]);
+        var data = await project.BuildAndGetOutput();
+        Assert.DoesNotContain("Meziantou.Polyfill", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
+    }
+
+    [Fact]
     public async Task CanOverrideNativeAotDebuggingProperties()
     {
         await using var project = CreateProjectBuilder();

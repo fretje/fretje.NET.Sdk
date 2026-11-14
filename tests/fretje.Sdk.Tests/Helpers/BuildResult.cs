@@ -14,10 +14,10 @@ internal sealed record BuildResult(int ExitCode, IReadOnlyList<string> OutputLin
     public bool OutputContains(string value, StringComparison stringComparison = StringComparison.Ordinal) => OutputLines.Any(line => line.Contains(value, stringComparison));
     public bool OutputDoesNotContain(string value, StringComparison stringComparison = StringComparison.Ordinal) => !OutputLines.Any(line => line.Contains(value, stringComparison));
 
-    public bool HasError() => SarifFile.AllResults().Any(r => r.Level == "error");
-    public bool HasError(string ruleId) => SarifFile.AllResults().Any(r => r.Level == "error" && r.RuleId == ruleId);
-    public bool HasWarning() => SarifFile.AllResults().Any(r => r.Level == "warning");
-    public bool HasWarning(string ruleId) => SarifFile.AllResults().Any(r => r.Level == "warning" && r.RuleId == ruleId);
+    public bool HasError() => SarifFile.AllResults().Any(r => !r.IsSuppressed && r.Level == "error");
+    public bool HasError(string ruleId) => SarifFile.AllResults().Any(r => !r.IsSuppressed && r.Level == "error" && r.RuleId == ruleId);
+    public bool HasWarning() => SarifFile.AllResults().Any(r => !r.IsSuppressed && r.Level == "warning");
+    public bool HasWarning(string ruleId) => SarifFile.AllResults().Any(r => !r.IsSuppressed && r.Level == "warning" && r.RuleId == ruleId);
     public bool HasNote(string ruleId) => SarifFile.AllResults().Any(r => r.Level == "note" && r.RuleId == ruleId);
 
     private Build GetBuild()

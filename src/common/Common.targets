@@ -8,7 +8,14 @@
 	<Import Project="$(MSBuildThisFileDirectory)/Tests.targets" Condition="'$(IsTestProject)' == 'true'" />
 	<Import Project="$(MSBuildThisFileDirectory)/Npm.targets" />
 
-	<PropertyGroup>
+  <ItemGroup Condition="'$(IncludeMeziantouPolyfill)' != 'false'">
+    <PackageReference Include="Meziantou.Polyfill" Version="1.0.171" IsImplicitlyDefined="true">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <PropertyGroup>
 		<!-- Suppress documentation warnings (CS1573, CS1591) unless DisableDocumentationWarnings is set to false -->
 		<NoWarn Condition="'$(DisableDocumentationWarnings)' != 'false'">$(NoWarn);CS1573;CS1591</NoWarn>
 	</PropertyGroup>
