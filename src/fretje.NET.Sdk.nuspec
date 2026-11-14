@@ -6,9 +6,10 @@
     <authors>Meziantou,fretje</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>fretje SDK for .NET projects</description>
+    <icon>icon.png</icon>
     <readme>README.md</readme>
     <license type="expression">MIT</license>
-    <repository type="git" url="$RepositoryUrl$" commit="$RepositoryCommit$" branch="$RepositoryBranch$" />
+    <repository type="git" url="$RepositoryUrl$" branch="$RepositoryBranch$" commit="$RepositoryCommit$" />
   </metadata>
   <files>
     <file src="Sdk/fretje.NET.Sdk/Sdk.props" target="Sdk/Sdk.props" />
@@ -44,7 +45,6 @@
     <file src="configuration/fretje.NET.Sdk.editorconfig" target="configuration/fretje.NET.Sdk.editorconfig" />
     <file src="sources/SharedHttpClient.cs" target="sources/SharedHttpClient.cs" />
     <file src="icon.png" target="icon.png" />
-    <file src="icon.svg" target="icon.svg" />
     <file src="../LICENSE.txt" target="LICENSE.txt" />
     <file src="../README.md" target="README.md" />
   </files>

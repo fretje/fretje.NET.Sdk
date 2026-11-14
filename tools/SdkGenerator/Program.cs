@@ -35,9 +35,9 @@ foreach (var (sdkName, baseSdkName) in sdks)
             <NuSpecFile>{{nuspecPath.Name}}</NuSpecFile>
             <Version>1.0.0</Version>
             <NuspecProperties>$(NuspecProperties);version=$(Version)</NuspecProperties>
-            <NuspecProperties>$(NuspecProperties);RepositoryBranch=$(GITHUB_REF_NAME);RepositoryUrl=$(GITHUB_REPOSITORY_URL)</NuspecProperties>
-            <NuspecProperties>$(NuspecProperties);RepositoryUrl=$(GITHUB_REPOSITORY_URL)</NuspecProperties>
-            <NuspecProperties>$(NuspecProperties);RepositoryUrl=$(GITHUB_REPOSITORY_URL)</NuspecProperties>
+            <NuspecProperties>$(NuspecProperties);RepositoryUrl=https://github.com/$(GITHUB_REPOSITORY)</NuspecProperties>
+            <NuspecProperties>$(NuspecProperties);RepositoryBranch=$(GITHUB_REF_NAME)</NuspecProperties>
+            <NuspecProperties>$(NuspecProperties);RepositoryCommit=$(GITHUB_SHA)</NuspecProperties>
           </PropertyGroup>
         </Project>
         """);
@@ -74,9 +74,10 @@ foreach (var (sdkName, baseSdkName) in sdks)
             <authors>Meziantou,fretje</authors>
             <requireLicenseAcceptance>false</requireLicenseAcceptance>
             <description>fretje SDK for .NET projects</description>
+            <icon>icon.png</icon>
             <readme>README.md</readme>
             <license type="expression">MIT</license>
-            <repository type="git" url="$RepositoryUrl$" commit="$RepositoryCommit$" branch="$RepositoryBranch$" />
+            <repository type="git" url="$RepositoryUrl$" branch="$RepositoryBranch$" commit="$RepositoryCommit$" />
           </metadata>
           <files>
         {{nuspecFiles}}
@@ -117,7 +118,6 @@ static string GetNuspecFiles(FullPath srcFolderPath, string sdkName)
     AddDirectoryFiles(files, srcFolderPath, "sources");
 
     files.Add(("icon.png", "icon.png"));
-    files.Add(("icon.svg", "icon.svg"));
     files.Add(("../LICENSE.txt", "LICENSE.txt"));
     files.Add(("../README.md", "README.md"));
 
