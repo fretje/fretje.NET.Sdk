@@ -403,7 +403,7 @@ dotnet_diagnostic.IDE0160.severity = silent
 # IDE0161: Convert to file-scoped namespace
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0161
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0161.severity = suggestion
+dotnet_diagnostic.IDE0161.severity = warning
 
 # IDE0170: Property pattern can be simplified
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0170
