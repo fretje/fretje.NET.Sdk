@@ -2434,12 +2434,12 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
     }
 
     [Fact]
-        public async Task MTP_ShouldlyAssertions_AssertRefersToShouldly()
+    public async Task MTP_ShouldlyAssertions_AssertRefersToShouldly()
     {
         await using var project = CreateProjectBuilder(SdkTestName);
         project.AddCsprojFile(filename: "Sample.Tests.csproj");
 
-            // 'Shouldly' must be usable without any using directive (the SDK adds the implicit global using)
+        // 'Shouldly' must be usable without any using directive (the SDK adds the implicit global using)
         project.AddFile("Program.cs", """
             public class Tests
             {
@@ -2459,13 +2459,13 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
         var data = await project.TestAndGetOutput();
 
         Assert.Equal(0, data.ExitCode);
-            Assert.Contains("Shouldly", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
-            Assert.Contains("Shouldly", data.GetMSBuildItems("Using"), StringComparer.Ordinal);
+        Assert.Contains("Shouldly", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
+        Assert.Contains("Shouldly", data.GetMSBuildItems("Using"), StringComparer.Ordinal);
     }
 
     // Shouldly is an extension-method library, so the assertions of the test framework stay available
     [Fact]
-        public async Task MTP_ShouldlyAssertions_XunitAssertIsStillAvailable()
+    public async Task MTP_ShouldlyAssertions_XunitAssertIsStillAvailable()
     {
         await using var project = CreateProjectBuilder(SdkTestName);
         project.AddCsprojFile(filename: "Sample.Tests.csproj");
@@ -2492,7 +2492,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
     }
 
     [Fact]
-        public async Task MTP_ShouldlyAssertions_OptOut()
+    public async Task MTP_ShouldlyAssertions_OptOut()
     {
         await using var project = CreateProjectBuilder(SdkTestName);
         project.AddCsprojFile(
@@ -2520,13 +2520,13 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
         var data = await project.TestAndGetOutput();
 
         Assert.Equal(0, data.ExitCode);
-            Assert.DoesNotContain("Shouldly", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
-            Assert.DoesNotContain("Shouldly", data.GetMSBuildItems("Using"), StringComparer.Ordinal);
+        Assert.DoesNotContain("Shouldly", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
+        Assert.DoesNotContain("Shouldly", data.GetMSBuildItems("Using"), StringComparer.Ordinal);
     }
 
     // Shouldly must not replace the assertions of a test framework referenced by the project itself
     [Fact]
-        public async Task MTP_ShouldlyAssertions_NotAddedWhenATestFrameworkIsReferenced()
+    public async Task MTP_ShouldlyAssertions_NotAddedWhenATestFrameworkIsReferenced()
     {
         await using var project = CreateProjectBuilder(SdkTestName);
         project.AddCsprojFile(
@@ -2554,12 +2554,12 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
         var data = await project.TestAndGetOutput();
 
         Assert.Equal(0, data.ExitCode);
-            Assert.DoesNotContain("Shouldly", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
+        Assert.DoesNotContain("Shouldly", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
     }
 
     // Setting the property explicitly adds the package even when the project references the test framework itself
     [Fact]
-        public async Task MTP_ShouldlyAssertions_ExplicitlyEnabled()
+    public async Task MTP_ShouldlyAssertions_ExplicitlyEnabled()
     {
         await using var project = CreateProjectBuilder(SdkTestName);
         project.AddCsprojFile(
@@ -2587,7 +2587,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
         var data = await project.TestAndGetOutput();
 
         Assert.Equal(0, data.ExitCode);
-            Assert.Contains("Shouldly", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
+        Assert.Contains("Shouldly", data.GetMSBuildItems("PackageReference"), StringComparer.OrdinalIgnoreCase);
     }
 
     [Fact]
@@ -3675,7 +3675,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
             }
             """);
 
-        var data = await project.BuildAndGetOutput();
+        var data = await project.BuildAndGetOutput(["/m:1"]);
         Assert.Equal(0, data.ExitCode);
         Assert.True(File.Exists(project.RootFolder / "bin" / "Debug" / netTargetFramework / "Sample.dll"));
         Assert.True(File.Exists(project.RootFolder / "bin" / "Debug" / "netstandard2.0" / "Sample.dll"));

@@ -226,10 +226,6 @@ internal sealed class ProjectBuilder : IAsyncDisposable
 
         arguments.Add("/bl");
 
-        // Force a single MSBuild node so multi-target builds are not fanned out into parallel processes. Each process
-        // would otherwise write the same ErrorLog (SARIF) file and can corrupt it with trailing bytes.
-        arguments.Add("/m:1");
-
         var environmentChanges = new Dictionary<string, string?>(StringComparer.Ordinal)
         {
             ["CI"] = string.Empty,
