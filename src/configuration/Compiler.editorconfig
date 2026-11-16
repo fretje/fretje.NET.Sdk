@@ -388,7 +388,7 @@ dotnet_diagnostic.IDE0121.severity = silent
 # IDE0130: Namespace does not match folder structure
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0130
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0130.severity = silent
+dotnet_diagnostic.IDE0130.severity = warning
 
 # IDE0150: Prefer 'null' check over type check
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0150
@@ -413,7 +413,7 @@ dotnet_diagnostic.IDE0170.severity = silent
 # IDE0180: Use tuple to swap values
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0180
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0180.severity = silent
+dotnet_diagnostic.IDE0180.severity = warning
 
 # IDE0200: Remove unnecessary lambda expression
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0200
@@ -443,22 +443,22 @@ dotnet_diagnostic.IDE0221.severity = silent
 # IDE0230: Use UTF-8 string literal
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0230
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0230.severity = silent
+dotnet_diagnostic.IDE0230.severity = warning
 
 # IDE0240: Remove redundant nullable directive
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0240
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0240.severity = silent
+dotnet_diagnostic.IDE0240.severity = warning
 
 # IDE0241: Remove unnecessary nullable directive
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0241
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0241.severity = silent
+dotnet_diagnostic.IDE0241.severity = warning
 
 # IDE0250: Make struct 'readonly'
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0250
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0250.severity = silent
+dotnet_diagnostic.IDE0250.severity = warning
 
 # IDE0251: Make member 'readonly'
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0251

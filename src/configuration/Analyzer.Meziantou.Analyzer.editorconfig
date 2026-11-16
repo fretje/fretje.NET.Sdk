@@ -512,7 +512,7 @@ dotnet_diagnostic.MA0101.severity = silent
 # MA0102: Make member readonly
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0102.md
 # Enabled: True, Severity: suggestion
-dotnet_diagnostic.MA0102.severity = suggestion
+dotnet_diagnostic.MA0102.severity = warning
 
 # MA0103: Use SequenceEqual instead of equality operator
 # Help link: https://github.com/meziantou/Meziantou.Analyzer/blob/main/docs/Rules/MA0103.md

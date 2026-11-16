@@ -293,7 +293,7 @@ dotnet_diagnostic.SA1124.severity = warning
 # SA1125: Use shorthand for nullable types
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1125.html
 # Enabled: True, Severity: warning
-dotnet_diagnostic.SA1125.severity = warning
+dotnet_diagnostic.SA1125.severity = silent
 
 # SA1126: Prefix calls correctly
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA1126.html
