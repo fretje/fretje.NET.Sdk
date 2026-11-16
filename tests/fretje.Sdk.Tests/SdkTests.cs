@@ -395,7 +395,7 @@ public abstract class SdkTests(PackageFixture fixture, ITestOutputHelper testOut
             ("OutputType", "Library"),
         ]);
         project.AddFile("Helpers.cs", """
-            namespace Sample;
+            namespace fretje.TestProject;
 
             public static class Helpers
             {
