@@ -59,7 +59,7 @@ dotnet_diagnostic.IDE0017.severity = silent
 # IDE0018: Inline variable declaration
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0018
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0018.severity = suggestion
+dotnet_diagnostic.IDE0018.severity = warning
 
 # IDE0019: Use pattern matching
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0019
@@ -74,37 +74,37 @@ dotnet_diagnostic.IDE0020.severity = suggestion
 # IDE0021: Use expression body for constructor
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0021
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0021.severity = silent
+dotnet_diagnostic.IDE0021.severity = warning
 
 # IDE0022: Use expression body for method
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0022
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0022.severity = silent
+dotnet_diagnostic.IDE0022.severity = warning
 
 # IDE0023: Use expression body for conversion operator
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0023
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0023.severity = silent
+dotnet_diagnostic.IDE0023.severity = warning
 
 # IDE0024: Use expression body for operator
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0024
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0024.severity = silent
+dotnet_diagnostic.IDE0024.severity = warning
 
 # IDE0025: Use expression body for property
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0025
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0025.severity = silent
+dotnet_diagnostic.IDE0025.severity = warning
 
 # IDE0026: Use expression body for indexer
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0026
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0026.severity = silent
+dotnet_diagnostic.IDE0026.severity = warning
 
 # IDE0027: Use expression body for accessor
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0027
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0027.severity = silent
+dotnet_diagnostic.IDE0027.severity = warning
 
 # IDE0028: Simplify collection initialization
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0028
@@ -114,22 +114,22 @@ dotnet_diagnostic.IDE0028.severity = suggestion
 # IDE0029: Use coalesce expression
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0029
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0029.severity = suggestion
+dotnet_diagnostic.IDE0029.severity = warning
 
 # IDE0030: Use coalesce expression
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0030
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0030.severity = suggestion
+dotnet_diagnostic.IDE0030.severity = warning
 
 # IDE0031: Use null propagation
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0031
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0031.severity = suggestion
+dotnet_diagnostic.IDE0031.severity = warning
 
 # IDE0032: Use auto property
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0032
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0032.severity = suggestion
+dotnet_diagnostic.IDE0032.severity = warning
 
 # IDE0033: Use explicitly provided tuple name
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0033
@@ -139,7 +139,7 @@ dotnet_diagnostic.IDE0033.severity = warning
 # IDE0034: Simplify 'default' expression
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0034
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0034.severity = suggestion
+dotnet_diagnostic.IDE0034.severity = warning
 
 # IDE0035: Unreachable code detected
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0035
@@ -154,7 +154,7 @@ dotnet_diagnostic.IDE0036.severity = silent
 # IDE0037: Use inferred member name
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0037
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0037.severity = silent
+dotnet_diagnostic.IDE0037.severity = warning
 
 # IDE0039: Use local function
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0039
@@ -174,11 +174,11 @@ dotnet_diagnostic.IDE0041.severity = silent
 # IDE0042: Deconstruct variable declaration
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0042
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0042.severity = suggestion
+dotnet_diagnostic.IDE0042.severity = warning
 
 # IDE0043: Invalid format string
 # Enabled: True, Severity: suggestion
-dotnet_diagnostic.IDE0043.severity = suggestion
+dotnet_diagnostic.IDE0043.severity = warning
 
 # IDE0044: Add readonly modifier
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0044
@@ -188,22 +188,22 @@ dotnet_diagnostic.IDE0044.severity = warning
 # IDE0045: Convert to conditional expression
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0045
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0045.severity = silent
+dotnet_diagnostic.IDE0045.severity = warning
 
 # IDE0046: Convert to conditional expression
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0046
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0046.severity = silent
+dotnet_diagnostic.IDE0046.severity = warning
 
 # IDE0047: Remove unnecessary parentheses
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0047
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0047.severity = suggestion
+dotnet_diagnostic.IDE0047.severity = silent
 
 # IDE0048: Add parentheses for clarity
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0048
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0048.severity = silent
+dotnet_diagnostic.IDE0048.severity = warning
 
 # IDE0051: Remove unused private members
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0051
@@ -218,7 +218,7 @@ dotnet_diagnostic.IDE0052.severity = warning
 # IDE0053: Use expression body for lambda expression
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0053
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0053.severity = silent
+dotnet_diagnostic.IDE0053.severity = warning
 
 # IDE0053: Use block body for lambda expression
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0053
@@ -228,7 +228,7 @@ dotnet_diagnostic.IDE0053.severity = silent
 # IDE0054: Use compound assignment
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0054
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0054.severity = silent
+dotnet_diagnostic.IDE0054.severity = none
 
 # IDE0055: Fix formatting
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0055
@@ -238,12 +238,12 @@ dotnet_diagnostic.IDE0055.severity = silent
 # IDE0056: Use index operator
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0056
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0056.severity = suggestion
+dotnet_diagnostic.IDE0056.severity = warning
 
 # IDE0057: Use range operator
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0057
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0057.severity = suggestion
+dotnet_diagnostic.IDE0057.severity = warning
 
 # IDE0058: Expression value is never used
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0058
@@ -263,22 +263,22 @@ dotnet_diagnostic.IDE0060.severity = silent
 # IDE0061: Use expression body for local function
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0061
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0061.severity = silent
+dotnet_diagnostic.IDE0061.severity = warning
 
 # IDE0062: Make local function 'static'
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0062
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0062.severity = suggestion
+dotnet_diagnostic.IDE0062.severity = warning
 
 # IDE0063: Use simple 'using' statement
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0063
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0063.severity = silent
+dotnet_diagnostic.IDE0063.severity = warning
 
 # IDE0064: Make readonly fields writable
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0064
 # Enabled: True, Severity: suggestion
-dotnet_diagnostic.IDE0064.severity = suggestion
+dotnet_diagnostic.IDE0064.severity = warning
 
 # IDE0065: Misplaced using directive
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0065
@@ -293,7 +293,7 @@ dotnet_diagnostic.IDE0066.severity = silent
 # IDE0070: Use 'System.HashCode'
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0070
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0070.severity = silent
+dotnet_diagnostic.IDE0070.severity = warning
 
 # IDE0071: Simplify interpolation
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0071
@@ -318,7 +318,7 @@ dotnet_diagnostic.IDE0073.severity = silent
 # IDE0074: Use compound assignment
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0074
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0074.severity = silent
+dotnet_diagnostic.IDE0074.severity = none
 
 # IDE0075: Simplify conditional expression
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0075
@@ -343,12 +343,12 @@ dotnet_diagnostic.IDE0078.severity = suggestion
 # IDE0079: Remove unnecessary suppression
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0079
 # Enabled: True, Severity: suggestion
-dotnet_diagnostic.IDE0079.severity = suggestion
+dotnet_diagnostic.IDE0079.severity = warning
 
 # IDE0080: Remove unnecessary suppression operator
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0080
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0080.severity = silent
+dotnet_diagnostic.IDE0080.severity = warning
 
 # IDE0082: 'typeof' can be converted to 'nameof'
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0082
@@ -368,12 +368,12 @@ dotnet_diagnostic.IDE0090.severity = silent
 # IDE0100: Remove redundant equality
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0100
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0100.severity = silent
+dotnet_diagnostic.IDE0100.severity = warning
 
 # IDE0110: Remove unnecessary discard
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0110
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0110.severity = silent
+dotnet_diagnostic.IDE0110.severity = warning
 
 # IDE0120: Simplify LINQ expression
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0120
@@ -393,7 +393,7 @@ dotnet_diagnostic.IDE0130.severity = warning
 # IDE0150: Prefer 'null' check over type check
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0150
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0150.severity = suggestion
+dotnet_diagnostic.IDE0150.severity = warning
 
 # IDE0160: Convert to block scoped namespace
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0160
@@ -408,7 +408,7 @@ dotnet_diagnostic.IDE0161.severity = warning
 # IDE0170: Property pattern can be simplified
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0170
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0170.severity = silent
+dotnet_diagnostic.IDE0170.severity = warning
 
 # IDE0180: Use tuple to swap values
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0180
@@ -418,7 +418,7 @@ dotnet_diagnostic.IDE0180.severity = warning
 # IDE0200: Remove unnecessary lambda expression
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0200
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0200.severity = suggestion
+dotnet_diagnostic.IDE0200.severity = warning
 
 # IDE0210: Convert to top-level statements
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0210
@@ -463,7 +463,7 @@ dotnet_diagnostic.IDE0250.severity = warning
 # IDE0251: Make member 'readonly'
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0251
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0251.severity = silent
+dotnet_diagnostic.IDE0251.severity = warning
 
 # IDE0260: Use pattern matching
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0260
@@ -483,7 +483,7 @@ dotnet_diagnostic.IDE0280.severity = silent
 # IDE0290: Use primary constructor
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0290
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0290.severity = silent
+dotnet_diagnostic.IDE0290.severity = warning
 
 # IDE0300: Simplify collection initialization
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0300
@@ -518,12 +518,12 @@ dotnet_diagnostic.IDE0305.severity = suggestion
 # IDE0306: Simplify collection initialization
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0306
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0306.severity = silent
+dotnet_diagnostic.IDE0306.severity = suggestion
 
 # IDE0320: Make anonymous function static
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0320
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0320.severity = silent
+dotnet_diagnostic.IDE0320.severity = warning
 
 # IDE0330: Use 'System.Threading.Lock'
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0330
@@ -533,17 +533,17 @@ dotnet_diagnostic.IDE0330.severity = silent
 # IDE0340: Use unbound generic type
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0340
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0340.severity = silent
+dotnet_diagnostic.IDE0340.severity = warning
 
 # IDE0350: Use implicitly typed lambda
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0350
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0350.severity = silent
+dotnet_diagnostic.IDE0350.severity = warning
 
 # IDE0360: Simplify property accessor
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0360
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0360.severity = silent
+dotnet_diagnostic.IDE0360.severity = warning
 
 # IDE0370: Remove unnecessary suppression
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0370
@@ -553,17 +553,17 @@ dotnet_diagnostic.IDE0370.severity = warning
 # IDE0380: Remove unnecessary 'unsafe' modifier
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0380
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0380.severity = silent
+dotnet_diagnostic.IDE0380.severity = warning
 
 # IDE0390: Make method synchronous
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0390
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0390.severity = silent
+dotnet_diagnostic.IDE0390.severity = warning
 
 # IDE0391: Make method synchronous
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0391
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0391.severity = silent
+dotnet_diagnostic.IDE0391.severity = warning
 
 # IDE0410: Use labeled jump statement
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0410
@@ -573,7 +573,7 @@ dotnet_diagnostic.IDE0410.severity = silent
 # IDE1005: Delegate invocation can be simplified.
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide1005
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE1005.severity = suggestion
+dotnet_diagnostic.IDE1005.severity = warning
 
 # IDE1006: Naming Styles
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide1006

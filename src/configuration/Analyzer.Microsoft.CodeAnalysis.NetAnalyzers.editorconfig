@@ -695,7 +695,7 @@ dotnet_diagnostic.CA1851.severity = suggestion
 # CA1852: Seal internal types
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1852
 # Enabled: True, Severity: silent
-dotnet_diagnostic.CA1852.severity = warning
+dotnet_diagnostic.CA1852.severity = silent
 
 # CA1853: Unnecessary call to 'Dictionary.ContainsKey(key)'
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1853
