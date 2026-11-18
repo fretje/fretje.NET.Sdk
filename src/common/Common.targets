@@ -9,7 +9,7 @@
 	<Import Project="$(MSBuildThisFileDirectory)/Npm.targets" />
 
   <ItemGroup Condition="'$(IncludeMeziantouPolyfill)' != 'false'">
-    <PackageReference Include="Meziantou.Polyfill" Version="1.0.171" IsImplicitlyDefined="true">
+    <PackageReference Include="Meziantou.Polyfill" Version="1.0.173" IsImplicitlyDefined="true">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
