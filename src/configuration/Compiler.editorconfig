@@ -224,7 +224,7 @@ dotnet_diagnostic.IDE0053.severity = warning
 # IDE0053: Use block body for lambda expression
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0053
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0053.severity = silent
+dotnet_diagnostic.IDE0053.severity = warning
 
 # IDE0054: Use compound assignment
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0054

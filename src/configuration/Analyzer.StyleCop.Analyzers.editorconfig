@@ -5,6 +5,12 @@ global_level = 0
 stylecop.naming.allowedNamespaceComponents = fretje
 stylecop.ordering.memberKindOrder = field, constructor, destructor, delegate, event, property, indexer, conversionOperator, operator, method, enum, interface, struct, class, extension
 
+stylecop.documentation.documentInterfaces = true
+stylecop.documentation.documentExposedElements = true
+stylecop.documentation.documentInternalElements = false
+stylecop.documentation.documentPrivateElements = false
+stylecop.documentation.documentPrivateFields = false
+
 # SA0001: XML comment analysis disabled
 # Help link: https://dotnetanalyzers.github.io/StyleCopAnalyzers/SA0001.html
 # Enabled: True, Severity: warning
